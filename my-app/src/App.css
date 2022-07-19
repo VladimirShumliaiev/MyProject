@@ -1,0 +1,5 @@
+.App {
+  display: grid;
+  grid-template-areas: 'h ' 'n c' 'f f';
+  text-align: center;
+}
