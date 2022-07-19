@@ -1,5 +1,11 @@
 .App {
   display: grid;
-  grid-template-areas: 'h ' 'n c' 'f f';
+  grid-template-areas: 'h h''n c' 'f f';
+  grid-template-rows: 2fr 10fr;
+  grid-template-columns: 3fr 9fr;
+  height: 80px;
+  /*width: 400px;*/
+  grid-gap: 10px;
   text-align: center;
+  margin: auto;
 }
