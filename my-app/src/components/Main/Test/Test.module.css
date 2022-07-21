@@ -1,4 +1,5 @@
 .item {
     grid-area: main;
     background: #a63218;
+    padding: 10px;
 }

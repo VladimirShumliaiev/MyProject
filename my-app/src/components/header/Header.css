@@ -1,5 +1,5 @@
 .Header {
-    display: grid;
+    /*display: grid;*/
     grid-area: header;
     background: #32cc51;
     text-decoration: none;
@@ -8,9 +8,15 @@
 }
 .Header a{
     text-decoration: none;
-    /*color: #002aff;*/
+    color: #002aff;
 }
-.active-link {
+a.active-link {
     color: #fffcfc;
     text-decoration: none;
+}
+
+.Header img {
+    width: 50px;
+    height: 50px;
+    text-align: left;
 }

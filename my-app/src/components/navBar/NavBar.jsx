@@ -1,13 +1,13 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import style from './NavBar.module.css'
+import './NavBar.css'
 
 function NavBar() {
 
     const setIsActive = ({isActive}) => isActive ? 'active-link' : '';
 
     return (
-        <div className={style.item}>
+        <div className={'NavBar'}>
             <h3>
                 <div>
                     <NavLink to={'ReactLessons'} className={setIsActive}>Lessons React</NavLink>
