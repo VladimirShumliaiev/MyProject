@@ -8,6 +8,9 @@ import Test from "./components/header/headerComponent/Test/Test";
 import AboutUs from "./components/header/headerComponent/AboutUs/AboutUs";
 import NavBar from "./components/navBar/NavBar";
 import Footer from "./components/footer/Footer";
+import ReactLessons from "./components/navBar/NavBarComponents/ReactLessons/ReactLessons";
+import ReactNews from "./components/navBar/NavBarComponents/ReactNews/ReactNews";
+import ReactTests from "./components/navBar/NavBarComponents/ReactTests/ReactTests";
 
 
 function App() {
@@ -16,13 +19,16 @@ function App() {
             <Header/>
             <NavBar/>
             <Home/>
-            <Footer/>
+            <Footer />
             <Routes>
                 <Route>
                     <Route path={'/'} element={<Home/>}/>
                     <Route path={'Blog'} element={<Blog/>}/>
                     <Route path={'AboutUs'} element={<AboutUs/>}/>
                     <Route path={'Test'} element={<Test/>}/>
+                    <Route path={'ReactLessons'} element={<ReactLessons />}/>
+                    <Route path={'ReactNews'} element={<ReactNews />}/>
+                    <Route path={'ReactTests'} element={<ReactTests/>}/>
                 </Route>
             </Routes>
         </div>

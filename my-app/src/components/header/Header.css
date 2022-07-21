@@ -8,8 +8,9 @@
 }
 .Header a{
     text-decoration: none;
+    /*color: #002aff;*/
 }
 .active-link {
-    color: #b23c22;
+    color: #fffcfc;
     text-decoration: none;
 }

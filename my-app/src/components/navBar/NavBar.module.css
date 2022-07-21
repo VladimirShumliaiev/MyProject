@@ -1,5 +1,9 @@
 .item{
     grid-area: nav;
-    background: blue;
+    background: #002aff;
     padding: 10px;
 }
+.item a{
+    text-decoration: none;
+}
+
