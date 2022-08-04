@@ -13,7 +13,6 @@ function Home() {
                 </div>
                 <TextereaMain />
                 <ButtonMain />
-
             </div>
         </div>
     );

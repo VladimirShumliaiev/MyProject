@@ -10,7 +10,7 @@ function NavBar() {
         <div className={'NavBar'}>
             <h3>
                 <div>
-                    <NavLink to={'TextereaButtonLessons'} className={setIsActive}>Lessons React</NavLink>
+                    <NavLink to={'ReactLessons'} className={setIsActive}>Lessons React</NavLink>
                 </div>
                 <div>
                     <NavLink to={'ReactNews'} className={setIsActive}>News React</NavLink>
