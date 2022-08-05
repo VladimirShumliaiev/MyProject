@@ -2,10 +2,10 @@
     grid-area: main;
     background: #66108d;
     padding: 10px;
-    color: #fffcfc;
+    color: #00ffb2;
 }
 
 .delete {
-    color: gold;
+    color: #ff1818;
     cursor: pointer;
 }

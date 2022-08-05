@@ -20,7 +20,7 @@ const ReactNews = () => {
         }
 
     }
-    const toggleToComleted = (todoId) => {
+    const toggleToCompleted = (todoId) => {
         setTodos(
             todos.map(todo => {
                 if (todo.id !== todoId) return todo;
@@ -40,7 +40,7 @@ const ReactNews = () => {
         <div className={style.item}>
             <label>
                 <input value={text} onChange={(e) => setText(e.target.value)}></input>
-                <button onClick={addTodos}>AddTodo</button>
+                <button onClick={addTodos}>Add Todos</button>
             </label>
 
             <ul>
@@ -48,7 +48,7 @@ const ReactNews = () => {
                     todos.map(todo => <li key={todo.id}>
                         <input type={'checkbox'}
                                checked={todo.completed}
-                               onChange={() => toggleToComleted(todo.id)}
+                               onChange={() => toggleToCompleted(todo.id)}
                         />
                         <span>{todo.text}</span>
                         <span className={style.delete} onClick={() => removeTodo(todo.id)}> &times;</span>

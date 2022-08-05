@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ButtonMain = () => {
+const ButtonHome = () => {
     return (
         <button>
             Search
@@ -8,4 +8,4 @@ const ButtonMain = () => {
     );
 };
 
-export default ButtonMain;
+export default ButtonHome;

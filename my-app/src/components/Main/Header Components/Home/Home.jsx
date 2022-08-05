@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Home.module.css'
-import TextereaMain from "../TextereaMine/TextereaMain";
-import ButtonMain from "../ButtonMain/ButtonMain";
+import TextereaHome from "./TextereaHome/TextereaHome";
+
 
 function Home() {
     return (
@@ -9,10 +9,10 @@ function Home() {
             <div className={style.item}>
                 <img src="https://miro.medium.com/0*T_pixc48DX2PIKh5.png" alt=""/>
                 <div className={style.item2}>
-                    hi
+                    <img src="https://thypix.com/wp-content/uploads/2021/05/baby-yoda-74-408x239.jpg" alt=""/>
+                     <span> hi</span>
                 </div>
-                <TextereaMain />
-                <ButtonMain />
+                <TextereaHome />
             </div>
         </div>
     );

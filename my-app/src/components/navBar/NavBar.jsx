@@ -10,13 +10,13 @@ function NavBar() {
         <div className={'NavBar'}>
             <h3>
                 <div>
-                    <NavLink to={'ReactLessons'} className={setIsActive}>Lessons React</NavLink>
+                    <NavLink to={'ReactLessons'} className={setIsActive}> React Lessons</NavLink>
                 </div>
                 <div>
-                    <NavLink to={'ReactNews'} className={setIsActive}>News React</NavLink>
+                    <NavLink to={'ReactNews'} className={setIsActive}> React News</NavLink>
                 </div>
                 <div>
-                    <NavLink to={'ReactTests'} className={setIsActive}>Test React</NavLink>
+                    <NavLink to={'ReactTests'} className={setIsActive}> React Test</NavLink>
                 </div>
             </h3>
 

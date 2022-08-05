@@ -1,8 +1,8 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
-import TextereaButtonLessons from "../../navBar/NavBarComponents/ReactLessons/Texterea-Button-Lessons/TextereaButtonLessons";
-import ReactNews from "../../navBar/NavBarComponents/ReactNews/ReactNews";
-import ReactTests from "../../navBar/NavBarComponents/ReactTests/ReactTests";
+import TextereaButtonLessons from "../../Main/NavBar Components/React Lessons/Texterea-Button-Lessons/TextereaButtonLessons";
+import ReactNews from "../../Main/NavBar Components/ReactNews/ReactNews";
+import ReactTests from "../../Main/NavBar Components/ReactTests/ReactTests";
 
 
 const RoutingsNavBar = () => {
