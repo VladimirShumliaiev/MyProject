@@ -4,7 +4,7 @@ import style from './Test.module.css'
 const Test = () => {
     return (
         <div className={style.item}>
-            Test
+           Test
         </div>
     );
 };

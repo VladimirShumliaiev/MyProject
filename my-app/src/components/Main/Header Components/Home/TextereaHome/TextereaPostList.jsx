@@ -5,7 +5,7 @@ const TextereaPostList = (props) => {
     return (
         <span>
             {
-                props.post.map(e => <TextereaPostItem post={e.post} key={e.id} {...e}/>)
+                props.post.map(e => <TextereaPostItem key={e.id} {...e}/>)
             }
         </span>
     );

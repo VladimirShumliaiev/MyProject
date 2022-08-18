@@ -1,8 +1,11 @@
 import {configureStore} from "@reduxjs/toolkit";
-import addPostReducer from "../Slices/addPostSlice";
+import todoSlice from "../Slices/todoSlice";
+import addPostSlice from "../Slices/addPostSlice";
+
 
 export default configureStore({
     reducer: {
-        posts: addPostReducer,
-    }
-})
+        todos: todoSlice,
+        posts: addPostSlice,
+    },
+});
