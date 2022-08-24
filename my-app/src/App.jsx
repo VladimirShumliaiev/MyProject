@@ -1,11 +1,12 @@
 import React from "react";
 import './App.css';
 import Header from "./components/header/Header";
-import Home from "./components/Main/Header Components/Home/Home";
+import Home from "./components/header/HeaderComponnents/Home/Home";
 import NavBar from "./components/navBar/NavBar";
 import Footer from "./components/footer/Footer"
 import RoutingsHeader from "./components/Routings/RoutingsHeader/RoutingsHeader";
 import RoutingsNavBar from "./components/Routings/RoutingsNavBar/RoutingsNavBar";
+
 
 
 function App() {

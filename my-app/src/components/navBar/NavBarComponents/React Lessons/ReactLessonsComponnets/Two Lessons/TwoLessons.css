@@ -1,0 +1,7 @@
+.itemTwoLessons {
+    grid-template-columns: 2fr 10fr;
+    grid-area: main;
+    /*background: #66108d;*/
+    padding: 10px;
+    color: #000000;
+}

@@ -1,0 +1,17 @@
+.itemReactLessons {
+    /*display: grid;*/
+    /*grid-template-rows: 2fr 10fr;*/
+    grid-area: main;
+    background: #ffffff;
+    padding: 10px;
+    color: #0033ff;
+}
+
+.itemReactLessons a {
+    text-decoration: none;
+    color: #2020fd;
+}
+
+a.active-link-lessons {
+    color: #e00404;
+}
