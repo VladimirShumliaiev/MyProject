@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import './NavBar.css'
+import Lessons from "./NavBarComponents/React Lessons/ReactLessonsComponnets/Lessons/Lessons";
 
 function NavBar() {
 
@@ -18,6 +19,7 @@ function NavBar() {
                 <div>
                     <NavLink to={'ReactTests'} className={setIsActive}> React Test</NavLink>
                 </div>
+                {/*<div><Lessons/></div>*/}
             </h3>
 
         </div>

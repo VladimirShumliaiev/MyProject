@@ -1,8 +1,9 @@
 .itemReactLessons {
     /*display: grid;*/
+    /*grid-template-columns: 2fr 10fr;*/
     /*grid-template-rows: 2fr 10fr;*/
     grid-area: main;
-    background: #ffffff;
+    background: #ffe024;
     padding: 10px;
     color: #0033ff;
 }
@@ -15,3 +16,4 @@
 a.active-link-lessons {
     color: #e00404;
 }
+

@@ -6,6 +6,8 @@ import NavBar from "./components/navBar/NavBar";
 import Footer from "./components/footer/Footer"
 import RoutingsHeader from "./components/Routings/RoutingsHeader/RoutingsHeader";
 import RoutingsNavBar from "./components/Routings/RoutingsNavBar/RoutingsNavBar";
+import RouterReactLessons
+    from "./components/navBar/NavBarComponents/React Lessons/ReactLessonsComponnets/RouterReactLessons/RouterReactLessons";
 
 
 
@@ -18,6 +20,7 @@ function App() {
             <Footer />
             <RoutingsHeader />
             <RoutingsNavBar />
+            <RouterReactLessons />
         </div>
 
     );

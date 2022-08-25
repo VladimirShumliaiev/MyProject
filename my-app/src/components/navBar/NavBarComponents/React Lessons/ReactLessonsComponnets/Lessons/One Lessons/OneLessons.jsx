@@ -4,7 +4,7 @@ import './OneLessons.css';
 const OneLessons = () => {
     return (
         <div className={'itemOneLessons'}>
-            One Lessons
+       One Lessons
         </div>
     );
 };
