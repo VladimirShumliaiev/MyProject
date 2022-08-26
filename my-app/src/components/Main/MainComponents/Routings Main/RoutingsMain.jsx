@@ -1,11 +1,11 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
-import ReactNews from "../../navBar/NavBarComponents/ReactNews/ReactNews";
-import ReactTests from "../../navBar/NavBarComponents/ReactTests/ReactTests";
-import ReactLessons from "../../navBar/NavBarComponents/React Lessons/ReactLessons";
+import ReactNews from "../React News/ReactNews";
+import ReactTests from "../React Tests/ReactTests";
+import ReactLessons from "../React Lessons/ReactLessons";
 
 
-const RoutingsNavBar = () => {
+const RoutingsMain = () => {
     return (
             <Routes>
                     <Route path={'ReactLessons'} element={<ReactLessons/>}/>
@@ -15,4 +15,4 @@ const RoutingsNavBar = () => {
     );
 };
 
-export default RoutingsNavBar;
+export default RoutingsMain;

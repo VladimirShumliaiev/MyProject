@@ -1,9 +1,10 @@
 import React from 'react';
 import {Route,Routes} from "react-router-dom";
-import Home from "../../header/HeaderComponnents/Home/Home";
-import Blog from "../../header/HeaderComponnents/Blog/Blog";
-import AboutUs from "../../header/HeaderComponnents/AboutUs/AboutUs";
-import Test from "../../header/HeaderComponnents/Test/Test";
+import Home from "../Home/Home";
+import Blog from "../Blog/Blog";
+import AboutUs from "../AboutUs/AboutUs";
+import Test from "../Test/Test";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
 const RoutingsHeader = () => {
     return (
@@ -13,6 +14,7 @@ const RoutingsHeader = () => {
                     <Route path={'blog'} element={<Blog/>}/>
                     <Route path={'aboutUs'} element={<AboutUs/>}/>
                     <Route path={'test'} element={<Test/>}/>
+                    <Route path={'*'} element={<NotFoundPage />}/>
                 </Route>
             </Routes>
     );

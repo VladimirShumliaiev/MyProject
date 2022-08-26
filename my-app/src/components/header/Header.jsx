@@ -13,7 +13,7 @@ const Header = () => {
             <NavLink to={'/'} className={setIsActive}>- Home -</NavLink>
             <NavLink to={'Blog'} className={setIsActive}> Blog -</NavLink>
             <NavLink to={'AboutUs'} className={setIsActive}> AboutUs -</NavLink>
-            <NavLink to={'Test'} className={setIsActive}> Test -</NavLink>
+            <NavLink to={'Test'} className={setIsActive}> Tests -</NavLink>
             </h1>
         </div>
         </>
