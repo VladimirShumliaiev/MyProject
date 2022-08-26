@@ -17,9 +17,8 @@ const ReactNews = () => {
         <div className={style.item}>
             <InputField
                 text={text}
-                handleInput={setText}
-                handelSubmit={addTusk}/>
-
+                setText={setText}
+                addTusk={addTusk}/>
             <TodoList/>
         </div>
     );

@@ -1,5 +1,5 @@
 .itemOneLessons {
-    display: grid;
+    /*display: grid;*/
     grid-area: main;
     background: #188d10;
     padding: 10px;

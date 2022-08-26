@@ -1,10 +1,10 @@
 import React from 'react';
 
-const InputField = ({text,handleInput,handelSubmit}) => {
+const InputField = ({text,setText,addTusk}) => {
     return (
             <label>
-                <input value={text} onChange={(e) => handleInput(e.target.value)}></input>
-                <button onClick={handelSubmit}>Add Todos</button>
+                <input value={text} onChange={(e) => setText(e.target.value)}></input>
+                <button onClick={addTusk}>Add Todos</button>
             </label>
     );
 };

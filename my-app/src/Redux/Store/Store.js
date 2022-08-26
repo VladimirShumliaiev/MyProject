@@ -6,6 +6,7 @@ import addPostSlice from "../Slices/addPostSlice";
 export default configureStore({
     reducer: {
         todos: todoSlice,
-        posts: addPostSlice,
+        // posts: addPostSlice,
+        // oneLessons: oneLessonsSlice,
     },
 });

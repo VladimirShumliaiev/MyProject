@@ -1,12 +1,13 @@
 import React from 'react';
-import './OneLessons.css';
+import './oneLessons.css';
+
 
 const OneLessons = () => {
     return (
         <div className={'itemOneLessons'}>
-       One Lessons
+          One Lessons
         </div>
-    );
+    )
 };
 
 export default OneLessons;
