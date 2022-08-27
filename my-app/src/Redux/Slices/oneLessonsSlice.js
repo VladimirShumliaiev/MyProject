@@ -4,11 +4,11 @@ const oneLessonsSlice = createSlice({
 
     name: 'oneLessons',
     initialState: {
-        oneLessons: ['']
+        oneLessons: []
     },
     reducers: {
         addText(state,action){
-            state.push({
+            state.oneLessons.push({
                 id: new Date().toISOString(),
                 text: action.payload.text,
             })
@@ -16,5 +16,5 @@ const oneLessonsSlice = createSlice({
     },
 });
 
-export const {addText} = addPostSlice.actions;
-export default addPostSlice.reducer;
+export const {addText} = oneLessonsSlice.actions;
+export default oneLessonsSlice.reducer;

@@ -8,15 +8,15 @@ const TodoItem = ({id, text, completed}) => {
 
     return (
         <li>
-            <input
-                type={'checkbox'}
-                checked={completed}
-                onChange={() => dispatch(toggleToCompleted({id}))}
-            />
+            {/*<input*/}
+            {/*    type={'checkbox'}*/}
+            {/*    checked={completed}*/}
+            {/*    onChange={() => dispatch(toggleToCompleted({id}))}*/}
+            {/*/>*/}
             <span>{text}</span>
-            <span className={style.delete} onClick={() => dispatch(removeTodo({id}))}>
-                &times;
-            </span>
+            {/*/!*<span className={style.delete} onClick={() => dispatch(removeTodo({id}))}>*!/*/}
+            {/*/!*    &times;*!/*/}
+            {/*</span>*/}
         </li>
     );
 };

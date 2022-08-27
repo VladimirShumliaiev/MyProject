@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
-import OneLessons from "../Lessons/One Lessons/oneLessons";
+import OneLessons from "../Lessons/One Lessons/OneLessons";
 import TwoLessons from "../Lessons/Two Lessons/TwoLessons";
 import ThreeLessons from "../Lessons/Three Lessons/Three Lessons";
 
