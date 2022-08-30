@@ -10,15 +10,15 @@ const todoSlice = createSlice({
             state.todos.push({
                 id: new Date().toISOString(),
                 text: action.payload.text,
-                // completed: false
+                completed: false
             })
         },
         removeTodo(state, action) {
-            // state.todos = state.todos.filter(todo => todo.id !== action.payload.id)
+            state.todos = state.todos.filter(todo => todo.id !== action.payload.id)
         },
         toggleToCompleted(state, action) {
-            // const toggleTodo = state.todos.find(todo => todo.id === action.payload.id);
-            // toggleTodo.completed = !toggleTodo.completed;
+            const toggleTodo = state.todos.find(todo => todo.id === action.payload.id);
+            toggleTodo.completed = !toggleTodo.completed;
         },
     }
 })

@@ -1,13 +1,13 @@
 import React from 'react';
 
-const TextereaFild = (props) => {
+const TextereaHomeFild = (props) => {
     return (
         <div>
             <textarea value={props.text} onChange={(e) => props.setText((e.target.value))}
                       placeholder={'...Text'}></textarea>
-            <button onClick={props.addPost}>OK</button>
+            <button onClick={props.addTusk}>OK</button>
         </div>
     );
 };
 
-export default TextereaFild;
+export default TextereaHomeFild;

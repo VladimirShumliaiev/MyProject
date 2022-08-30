@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Home.module.css'
-import TextereaHome from "./TextereaHome/TextereaHome";
+import TextereaHomeItem from "./HomeComponents/HomeItem";
 
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
                     <img src="https://thypix.com/wp-content/uploads/2021/05/baby-yoda-74-408x239.jpg" alt=""/>
                      <span> hi </span>
                 </div>
-                <TextereaHome />
+                <TextereaHomeItem />
             </div>
         </div>
     );

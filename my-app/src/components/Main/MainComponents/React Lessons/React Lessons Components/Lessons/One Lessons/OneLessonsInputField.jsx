@@ -1,10 +1,10 @@
 import React from 'react';
 
-const OneLessonsInputField = ({text,setText,addTusk}) => {
+const OneLessonsInputField = (props) => {
     return (
         <div>
-            <input value={text} onChange={(e) => setText(e.target.value)}></input>
-            <button onClick={addTusk}>Push</button>
+            <input value={props.text} onChange={(e) => props.setText(e.target.value)}></input>
+            <button onClick={props.addTusk}>Push</button>
         </div>
     );
 };
