@@ -1,9 +1,9 @@
 import React from 'react';
 
-const OneLessonsItem = ({id,text}) => {
+const OneLessonsItem = (props) => {
     return (
-        <div key={id}>
-            {text}
+        <div key={props.id}>
+            {props.text}
         </div>
     );
 };
