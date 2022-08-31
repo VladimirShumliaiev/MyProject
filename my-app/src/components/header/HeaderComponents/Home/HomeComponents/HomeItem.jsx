@@ -17,7 +17,6 @@ const HomeItem = () => {
     }
 
 
-
     return (
         <div className={style.item}>
             <TextereaHomeFild
@@ -25,7 +24,7 @@ const HomeItem = () => {
                 setText={setText}
                 addTusk={addTusk}
             />
-            <HomePostList />
+            <HomePostList/>
         </div>
     );
 };

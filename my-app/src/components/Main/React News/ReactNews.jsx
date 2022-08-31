@@ -3,7 +3,7 @@ import style from './ReactNews.module.css'
 import TodoList from "./todoComponents/TodoList";
 import InputField from "./todoComponents/InputField";
 import {useDispatch} from "react-redux";
-import {addTodos} from "../../../../Redux/Slices/todoSlice";
+import {addTodos} from "../../../Redux/Slices/todoSlice";
 
 const ReactNews = () => {
     const [text, setText] = useState('');

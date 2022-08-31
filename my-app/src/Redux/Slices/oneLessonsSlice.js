@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const oneLessonsSlice = createSlice({
+const oneLessonSlice = createSlice({
 
     name: 'oneLessons',
     initialState: {
@@ -16,5 +16,5 @@ const oneLessonsSlice = createSlice({
     },
 });
 
-export const {addText} = oneLessonsSlice.actions;
-export default oneLessonsSlice.reducer;
+export const {addText} = oneLessonSlice.actions;
+export default oneLessonSlice.reducer;

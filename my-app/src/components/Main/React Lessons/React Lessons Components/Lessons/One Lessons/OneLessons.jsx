@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './OneLessons.css';
 import {useDispatch} from "react-redux";
-import {addText} from "../../../../../../../Redux/Slices/oneLessonsSlice";
+import {addText} from "../../../../../../Redux/Slices/oneLessonsSlice";
 import OneLessonsInputField from "./OneLessonsInputField";
 import OneLessonsList from "./OneLessonsList";
 

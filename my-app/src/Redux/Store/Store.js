@@ -2,6 +2,8 @@ import {configureStore} from "@reduxjs/toolkit";
 import todoSlice from "../Slices/todoSlice";
 import oneLessonsSlice from "../Slices/oneLessonsSlice";
 import homeSlice from "../Slices/homeSlice";
+import testSlice from "../Slices/testSlice";
+
 
 
 
@@ -10,5 +12,6 @@ export default configureStore({
         todos: todoSlice,
         posts: homeSlice,
         oneLessons: oneLessonsSlice,
+        test: testSlice,
     },
 });

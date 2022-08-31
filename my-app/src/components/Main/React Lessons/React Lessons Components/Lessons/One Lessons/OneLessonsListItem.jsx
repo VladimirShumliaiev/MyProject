@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OneLessonsItem = (props) => {
+const OneLessonsListItem = (props) => {
     return (
         <div key={props.id}>
             {props.text}
@@ -8,4 +8,4 @@ const OneLessonsItem = (props) => {
     );
 };
 
-export default OneLessonsItem;
+export default OneLessonsListItem;

@@ -8,7 +8,7 @@ const HomePostList = () => {
     return (
         <span>
             {
-                addPost.map(e => <HomePostItem key={e.id} {...e}/>)
+                addPost.map(e => <HomePostItem key={e.id}  {...e}/>)
             }
         </span>
     );

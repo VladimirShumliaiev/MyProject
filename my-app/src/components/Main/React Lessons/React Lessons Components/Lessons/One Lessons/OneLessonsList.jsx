@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import OneLessonsItem from "./OneLessonsItem";
+import OneLessonsListItem from "./OneLessonsListItem";
 
 const OneLessonsList = () => {
     const oneLessons = useSelector(state => state.oneLessons.oneLessons);
@@ -8,7 +8,7 @@ const OneLessonsList = () => {
     return (
         <div>
             {
-                oneLessons.map(e => <OneLessonsItem
+                oneLessons.map(e => <OneLessonsListItem
                     key={e.id}
                     {...e}
                />)

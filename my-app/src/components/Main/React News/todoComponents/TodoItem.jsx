@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "../ReactNews.module.css";
 import {useDispatch} from "react-redux";
-import {removeTodo, toggleToCompleted} from "../../../../../Redux/Slices/todoSlice";
+import {removeTodo, toggleToCompleted} from "../../../../Redux/Slices/todoSlice";
 
 const TodoItem = ({id, text, completed}) => {
     const dispatch = useDispatch();
