@@ -5,7 +5,7 @@ const TwoLessons = () => {
     return (
 
         <div className={'itemTwoLessons'}>
-             Two Lessons
+             Two Lessons - Two Lessons
         </div>
     );
 };
