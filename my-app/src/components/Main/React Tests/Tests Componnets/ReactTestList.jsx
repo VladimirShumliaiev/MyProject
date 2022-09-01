@@ -4,18 +4,17 @@ import ReactTestListItem from "./ReactTestListItem";
 
 const ReactTestList = () => {
 
-    const smsList = useSelector(state => state.sms.sms)
+    const selector = useSelector(state => state.test.test);
 
     return (
         <ol>
             {
-                smsList.map(e => <ReactTestListItem key={e.id} {...e}/>)
+                selector.map(e => <ReactTestListItem key={e.id} {...e} />)
             }
         </ol>
     );
 };
 
 export default ReactTestList;
-
 
 

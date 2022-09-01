@@ -8,16 +8,19 @@ const homeSlice = createSlice({
                 ava: 'https://mobimg.b-cdn.net/v3/fetch/9d/9db2d4683d92f5f2045e9142fbd82633.jpeg',
                 text: 'Whats your name',
                 like: 453,
+                id: 1
             },
             {
                 ava: 'https://mobimg.b-cdn.net/v3/fetch/9d/9db2d4683d92f5f2045e9142fbd82633.jpeg',
                 text: 'Whats your ',
                 like: 1000,
+                id: 2
             },
             {
                 ava: 'https://mobimg.b-cdn.net/v3/fetch/9d/9db2d4683d92f5f2045e9142fbd82633.jpeg',
                 text: 'Whats ',
                 like: 4535,
+                id: 3
             },
         ]
     },

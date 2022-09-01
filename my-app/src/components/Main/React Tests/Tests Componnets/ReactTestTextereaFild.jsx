@@ -3,8 +3,8 @@ import React from 'react';
 const ReactTestTextereaFild = (props) => {
     return (
         <div>
-            <textarea value={props.text} onChange={(e) => props.setText(e.target.value)}/>
-            <button onClick={props.addSms}>Push</button>
+            <textarea value={props.text} onChange={(e) => props.setText(e.target.value)} placeholder={'...SMS-SMS'}/>
+            <button onClick={props.addTest}>Push</button>
         </div>
     );
 };
