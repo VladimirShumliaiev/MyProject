@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
 import style from './ReactTests.module.css'
 import {useDispatch} from "react-redux";
-import {addTest} from "../../../Redux/Slices/testSlice";
+import {addSms} from "../../../Redux/Slices/testSlice";
 import ReactTestTextereaFild from "./Tests Componnets/ReactTestTextereaFild";
 import ReactTestList from "./Tests Componnets/ReactTestList";
 
-const ReactTests = () => {
 
-    const [text,setText] = useState('');
+const ReactTests = () => {
+    const [text, setText] = useState('');
     const dispatch = useDispatch();
 
     const addTusk = () => {
-        dispatch(addTest({text}));
+        dispatch(addSms({text}));
         setText('')
     }
 
@@ -20,15 +20,14 @@ const ReactTests = () => {
             <ReactTestTextereaFild
                 text={text}
                 setText={setText}
-                addTest={addTusk}
+                addSms={addTusk}
             />
-            <ReactTestList />
+
+            <ReactTestList/>
+
         </div>
     );
 };
 
 export default ReactTests;
-
-
-
 

@@ -3,15 +3,19 @@ import {useSelector} from "react-redux";
 import ReactTestListItem from "./ReactTestListItem";
 
 const ReactTestList = () => {
-    const test = useSelector(state => state.test.test);
+
+    const smsList = useSelector(state => state.sms.sms)
 
     return (
-        <div>
+        <ol>
             {
-                test.map((e) => <ReactTestListItem key={e.id} {...e}/>)
+                smsList.map(e => <ReactTestListItem key={e.id} {...e}/>)
             }
-        </div>
+        </ol>
     );
 };
 
 export default ReactTestList;
+
+
+

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ReactTestListItem = ({id, text}) => {
+const ReactTestListItem = ({text}) => {
     return (
-        <div key={id}>
+        <li>
             {text}
-        </div>
+        </li>
     );
 };
 
