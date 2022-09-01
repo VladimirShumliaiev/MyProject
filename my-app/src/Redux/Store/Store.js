@@ -15,7 +15,7 @@ export default configureStore({
         todos: todoSlice,
         posts: homeSlice,
         oneLessons: oneLessonsSlice,
-        sms: testSlice,
+        test: testSlice,
 
     },
 });

@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 const HomePostItem = ({text, like, ava}) => {
     return (
         <div>
