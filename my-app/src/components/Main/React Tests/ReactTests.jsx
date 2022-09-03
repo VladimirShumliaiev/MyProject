@@ -6,20 +6,23 @@ import ReactTestTextereaFild from "./Tests Componnets/ReactTestTextereaFild";
 import ReactTestList from "./Tests Componnets/ReactTestList";
 
 const ReactTests = () => {
-    const [text,setText] = useState('');
-    const dispatch = useDispatch();
+    const [text, setText] = useState('');
+    const dispatch = useDispatch()
 
-    const addTusk = () => {
+    const addTestsCell = () => {
         dispatch(addTest({text}))
         setText('')
     }
-
     return (
         <div className={style.item}>
-            <ReactTestTextereaFild text={text} setText={setText} addTest={addTusk}/>
+            <ReactTestTextereaFild text={text} setText={setText} addTest={addTestsCell}/>
             <ReactTestList />
         </div>
-    );
-};
+
+
+
+
+    )
+}
 
 export default ReactTests;
