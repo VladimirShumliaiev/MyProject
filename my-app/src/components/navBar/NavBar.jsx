@@ -20,7 +20,6 @@ function NavBar() {
                     <NavLink to={'ReactTests'} className={setIsActive}> React Test</NavLink>
                 </div>
             </h3>
-
         </div>
     );
 }
