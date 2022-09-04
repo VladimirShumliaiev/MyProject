@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReactTestListItem = ({text}) => {
+const TestListItem = ({text}) => {
     return (
         <li>
             {text}
@@ -8,4 +8,4 @@ const ReactTestListItem = ({text}) => {
     );
 };
 
-export default ReactTestListItem;
+export default TestListItem;

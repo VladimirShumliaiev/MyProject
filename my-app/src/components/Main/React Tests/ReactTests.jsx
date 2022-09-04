@@ -1,23 +1,23 @@
 import React, {useState} from 'react';
+import style from './ReactTests.module.css'
 import {useDispatch} from "react-redux";
 import {addTest} from "../../../Redux/Slices/testSlice";
-import ReactTestTextereaFild from "./Tests Componnets/ReactTestTextereaFild";
-import ReactTestList from "./Tests Componnets/ReactTestList";
-import style from './ReactTests.module.css'
+import InputTest from "./Tests Componnets/InputTest";
+import TestList from "./Tests Componnets/TestList";
 
 const ReactTests = () => {
     const [text,setText] = useState('');
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
-    const addTestCell = () => {
+    const addTusk = () => {
         dispatch(addTest({text}))
         setText('')
     }
 
     return (
         <div className={style.item}>
-            <ReactTestTextereaFild text={text} setText={setText} addTest={addTestCell}/>
-            <ReactTestList />
+            <InputTest text={text} setText={setText} addTest={addTusk}/>
+            <TestList/>
         </div>
     );
 };

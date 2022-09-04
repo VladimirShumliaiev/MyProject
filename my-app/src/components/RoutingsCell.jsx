@@ -10,7 +10,6 @@ const RoutingsCell = () => {
             <RoutingsHeader/>
             <RoutingsMain/>
             <RouterReactLessons/>
-
         </>
     );
 };
