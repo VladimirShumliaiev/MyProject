@@ -5,19 +5,19 @@ import './NavBar.css'
 
 function NavBar() {
 
-    const setIsActive = ({isActive}) => isActive ? 'active-link' : '';
+    const setIsActive = ({isActive}) => isActive ? 'active-link-two' : '';
 
     return (
         <div className={'NavBar'}>
             <h3>
                 <div>
-                    <NavLink to={'ReactLessons'} className={setIsActive}> React Lessons</NavLink>
+                    <NavLink to={'/ReactLessons'} className={setIsActive}> React Lessons</NavLink>
                 </div>
                 <div>
-                    <NavLink to={'ReactNews'} className={setIsActive}> React News</NavLink>
+                    <NavLink to={'/ReactNews'} className={setIsActive}> React News</NavLink>
                 </div>
                 <div>
-                    <NavLink to={'ReactTests'} className={setIsActive}> React Test</NavLink>
+                    <NavLink to={'/ReactTests'} className={setIsActive}> React Test</NavLink>
                 </div>
             </h3>
         </div>

@@ -4,7 +4,8 @@ import Header from "./components/header/Header";
 import Home from "./components/header/HeaderComponents/Home/Home";
 import NavBar from "./components/navBar/NavBar";
 import Footer from "./components/footer/Footer"
-import RoutingsCell from "./components/RoutingsCell";
+import RoutingCell from "./components/RoutingCell";
+
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
             <NavBar/>
             <Home/>
             <Footer/>
-            <RoutingsCell/>
+            <RoutingCell/>
         </div>
 
     );

@@ -5,14 +5,14 @@ import ReactTests from "../React Tests/ReactTests";
 import ReactLessons from "../React Lessons/ReactLessons";
 
 
-const RoutingsMain = () => {
+const RoutingMain = () => {
     return (
             <Routes>
-                    <Route path={'ReactLessons'} element={<ReactLessons/>}/>
-                    <Route path={'ReactNews'} element={<ReactNews/>}/>
-                    <Route path={'ReactTests'} element={<ReactTests/>}/>
+                    <Route path={'/ReactLessons'} element={<ReactLessons/>}/>
+                    <Route path={'/ReactNews'} element={<ReactNews/>}/>
+                    <Route path={'/ReactTests'} element={<ReactTests/>}/>
             </Routes>
     );
 };
 
-export default RoutingsMain;
+export default RoutingMain;

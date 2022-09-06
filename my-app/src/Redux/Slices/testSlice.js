@@ -2,15 +2,15 @@ import {createSlice} from "@reduxjs/toolkit";
 
 
 const testSlice = createSlice({
-    name: 'test',
-    initialState: {
-        tests: []
+    name:'Test',
+    initialState:{
+        test: []
     },
     reducers: {
         addTest(state,action){
-            state.tests.push({
+            state.test.push({
                 id: new Date().toISOString(),
-                text: action.payload.text,
+                text: action.payload.text
             })
         }
     }

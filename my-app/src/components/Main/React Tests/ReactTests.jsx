@@ -1,22 +1,23 @@
 import React, {useState} from 'react';
-import style from './ReactTests.module.css'
 import {useDispatch} from "react-redux";
-import {addTest} from "../../../Redux/Slices/testSlice";
-import InputTest from "./Tests Componnets/InputTest";
+import TestInput from "./Tests Componnets/TestInput";
 import TestList from "./Tests Componnets/TestList";
+import {addTest} from "../../../Redux/Slices/testSlice";
+import style from './ReactTests.module.css'
 
 const ReactTests = () => {
-    const [text,setText] = useState('');
-    const dispatch = useDispatch()
+    const [text, setText] = useState('');
+    const dispatch = useDispatch();
 
-    const addTusk = () => {
+    const addText = () => {
         dispatch(addTest({text}))
         setText('')
     }
 
+
     return (
         <div className={style.item}>
-            <InputTest text={text} setText={setText} addTest={addTusk}/>
+            <TestInput text={text} setText={setText} addText={addText}/>
             <TestList/>
         </div>
     );

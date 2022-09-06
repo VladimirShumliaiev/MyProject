@@ -7,9 +7,9 @@ import ThreeLessons from "../Lessons/Three Lessons/Three Lessons";
 const RouterReactLessons = () => {
     return (
             <Routes>
-                    <Route path={'oneLessons'} element={<OneLessons />}/>
-                    <Route path={'twoLessons'} element={<TwoLessons />}/>
-                    <Route path={'threeLessons'} element={<ThreeLessons />}/>
+                    <Route path={'/oneLessons'} element={<OneLessons />}/>
+                    <Route path={'/twoLessons'} element={<TwoLessons />}/>
+                    <Route path={'/threeLessons'} element={<ThreeLessons />}/>
             </Routes>
     );
 };

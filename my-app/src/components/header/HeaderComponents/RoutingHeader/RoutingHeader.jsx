@@ -6,7 +6,7 @@ import AboutUs from "../AboutUs/AboutUs";
 import Test from "../Test/Test";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
-const RoutingsHeader = () => {
+const RoutingHeader = () => {
     return (
         <Routes>
             <Route path={'/'} element={<Home/>}/>
@@ -18,4 +18,4 @@ const RoutingsHeader = () => {
     );
 };
 
-export default RoutingsHeader;
+export default RoutingHeader;
