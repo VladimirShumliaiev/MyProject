@@ -1,8 +1,8 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
 import ReactNews from "../React News/ReactNews";
-import ReactTests from "../React Tests/ReactTests";
 import ReactLessons from "../React Lessons/ReactLessons";
+import TestTodo from "../React Tests/TestTodo";
 
 
 const RoutingMain = () => {
@@ -10,7 +10,7 @@ const RoutingMain = () => {
             <Routes>
                     <Route path={'/ReactLessons'} element={<ReactLessons/>}/>
                     <Route path={'/ReactNews'} element={<ReactNews/>}/>
-                    <Route path={'/ReactTests'} element={<ReactTests/>}/>
+                    <Route path={'/ReactTests'} element={<TestTodo/>}/>
             </Routes>
     );
 };
