@@ -1,27 +1,28 @@
 import {createSlice} from "@reduxjs/toolkit";
 
+
 const testSlice = createSlice({
     name: 'test',
     initialState: {
         tests: []
     },
     reducers: {
-        addTest(state,action) {
+        addTodoTest(state,action) {
             state.tests.push({
                 id: new Date().toISOString(),
                 text: action.payload.text,
                 completed: false,
             })
         },
-        removeTest(state,action) {
-            state.tests = state.tests.filter(e => e.id !== action.payload.id)
+        removeTodoTest(state,action){
+            state.tests = state.tests.filter(todo => todo.id !== action.payload.id)
         },
-        toggleTest(state,action) {
-            const toggleToTest = state.tests.find(e => e.id === action.payload.id);
-            toggleToTest.completed = ! toggleToTest.completed
-        }
+        toggleTodoTest(state,action){
+            const toggleTodo = state.tests.find(todo => todo.id === action.payload.id);
+            toggleTodo.completed = !toggleTodo.completed;
+        },
     }
 })
 
-export const {addTest,removeTest,toggleTest} = testSlice.actions;
+export const {addTodoTest,removeTodoTest,toggleTodoTest} = testSlice.actions;
 export default testSlice.reducer;
