@@ -2,10 +2,10 @@ import React from 'react';
 
 const TestTodoInput = (props) => {
     return (
-        <div>
+        <ol>
             <input value={props.text} onChange={(e) => props.setText(e.target.value)}/>
-            <button onClick={props.addTodoTest}>Push</button>
-        </div>
+            <button onClick={props.addTest}>Push</button>
+        </ol>
     );
 };
 

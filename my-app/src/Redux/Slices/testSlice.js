@@ -6,23 +6,23 @@ const testSlice = createSlice({
     initialState: {
         tests: []
     },
-    reducers: {
-        addTodoTest(state,action) {
+    reducers:{
+        addTests(state,action){
             state.tests.push({
                 id: new Date().toISOString(),
                 text: action.payload.text,
-                completed: false,
+                completed: false
             })
         },
-        removeTodoTest(state,action){
+        removeTodo(state,action){
             state.tests = state.tests.filter(todo => todo.id !== action.payload.id)
         },
-        toggleTodoTest(state,action){
+        toggleCompleted(state,action){
             const toggleTodo = state.tests.find(todo => todo.id === action.payload.id);
             toggleTodo.completed = !toggleTodo.completed;
-        },
+        }
     }
 })
 
-export const {addTodoTest,removeTodoTest,toggleTodoTest} = testSlice.actions;
+export const {addTests,removeTodo,toggleCompleted} = testSlice.actions;
 export default testSlice.reducer;

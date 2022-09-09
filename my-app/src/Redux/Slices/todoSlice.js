@@ -10,7 +10,7 @@ const todoSlice = createSlice({
             state.todos.push({
                 id: new Date().toISOString(),
                 text: action.payload.text,
-                completed: false
+                completed: false,
             })
         },
         removeTodo(state, action) {

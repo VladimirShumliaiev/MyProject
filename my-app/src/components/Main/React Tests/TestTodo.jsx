@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import style from './ReactTests.module.css'
 import {useDispatch} from "react-redux";
-import {addTodoTest} from "../../../Redux/Slices/testSlice";
+import {addTests} from "../../../Redux/Slices/testSlice";
 import TestTodoInput from "./Tests Componnets/TestTodoInput";
 import TestTodoList from "./Tests Componnets/TestTodoList";
 
@@ -10,12 +10,12 @@ const TestTodo = () => {
     const dispatch = useDispatch();
 
     const addTusk = () => {
-        dispatch(addTodoTest({text}))
+        dispatch(addTests({text}))
         setText('')
     }
     return (
         <div className={style.item}>
-            <TestTodoInput text={text} setText={setText} addTodoTest={addTusk}/>
+            <TestTodoInput text={text} setText={setText} addTest={addTusk}/>
             <TestTodoList />
         </div>
     );
