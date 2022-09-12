@@ -1,9 +1,9 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {testRemove, testToggleCompleted} from "../../../../Redux/Slices/testSlice";
+import {removeTestTodo, toggleTestTodo} from "../../../../Redux/Slices/testTodoSlice";
 import style from './TestItem.module.css'
 
-const TestItem = ({text,completed,id}) => {
+const TestItem = ({text, id, completed}) => {
     const dispatch = useDispatch()
 
     return (
@@ -11,13 +11,15 @@ const TestItem = ({text,completed,id}) => {
             <input
                 type={'checkbox'}
                 checked={completed}
-                onChange={() => dispatch(testToggleCompleted({id}))}
-            />
+                onChange={() => dispatch(toggleTestTodo({id}))}/>
+
             {text}
-            <span className={style.item} onClick={() => dispatch(testRemove({id}))}>
+
+            <span className={style.item} onClick={() => dispatch(removeTestTodo({id}))}>
                 &times;
             </span>
         </li>
+
     );
 };
 

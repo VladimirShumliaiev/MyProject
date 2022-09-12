@@ -3,8 +3,7 @@ import {useSelector} from "react-redux";
 import TestItem from "./TestItem";
 
 const TestList = () => {
-    const selector = useSelector(state => state.test.test)
-
+    const selector = useSelector(state => state.test.testTodo)
     return (
         <ol>
             {
