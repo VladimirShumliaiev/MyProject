@@ -10,7 +10,6 @@ const OneLessonsList = () => {
             {
                 oneLessons.map(e => <OneLessonsListItem
                     key={e.id}
-                    {...e}
                />)
             }
         </div>
