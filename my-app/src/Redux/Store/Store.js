@@ -10,7 +10,7 @@ export default configureStore({
         todos: todoSlice,
         posts: homeSlice,
         oneLessons: oneLessonsSlice,
-        testTodo: testTodoSlice,
+        test: testTodoSlice
 
 
     },

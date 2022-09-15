@@ -6,13 +6,13 @@ const OneLessonsList = () => {
     const oneLessons = useSelector(state => state.oneLessons.oneLessons);
 
     return (
-        <div>
+        <ol>
             {
                 oneLessons.map(e => <OneLessonsListItem
-                    key={e.id}
+                    key={e.id} {...e}
                />)
             }
-        </div>
+        </ol>
     );
 };
 

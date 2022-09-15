@@ -23,7 +23,7 @@ const OneLessons = () => {
                 setText={setText}
                 addTusk={addTusk}
             />
-            <OneLessonsList />
+            <OneLessonsList/>
 
         </div>
     )
