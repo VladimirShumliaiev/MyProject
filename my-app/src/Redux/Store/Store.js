@@ -5,12 +5,13 @@ import homeSlice from "../Slices/homeSlice";
 import testTodoSlice from "../Slices/testTodoSlice";
 
 
+
 export default configureStore({
     reducer: {
         todos: todoSlice,
         posts: homeSlice,
         oneLessons: oneLessonsSlice,
-        test: testTodoSlice
+        test: testTodoSlice,
 
 
     },
