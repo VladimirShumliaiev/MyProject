@@ -2,12 +2,12 @@ import {createSlice} from "@reduxjs/toolkit";
 
 
 const todoSlice = createSlice({
-    name: 'todos',
+    name: 'Todos',
     initialState: {
         todos: []
     },
     reducers: {
-        addTodo(state, action){
+        addTodos(state, action){
             state.todos.push({
                 id: new Date().toISOString(),
                 text: action.payload.text,
@@ -17,12 +17,12 @@ const todoSlice = createSlice({
         removeTodo(state, action){
             state.todos = state.todos.filter(e => e.id !== action.payload.id)
         },
-        toggleTodo(state, action){
+        toggleCompletedTodo(state, action){
             const toggle = state.todos.find(e => e.id === action.payload.id)
             toggle.completed = !toggle.completed
         },
     }
 })
 
-export const {addTodo, removeTodo, toggleTodo} = todoSlice.actions
+export const {addTodos, removeTodo, toggleCompletedTodo} = todoSlice.actions
 export default todoSlice.reducer
