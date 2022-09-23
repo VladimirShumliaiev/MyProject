@@ -1,12 +1,12 @@
 import React from 'react';
-import style from '../ReactNews.module.css'
 import {useDispatch} from "react-redux";
-import {removeTodo, toggleCompleted} from "../../../../Redux/Slices/todoSlice";
+import {removeTodo, toggleTodo} from "../../../../Redux/Slices/todoSlice";
+import style from '../ReactNews.module.css'
 
 const TodoItem = ({id, text, completed}) => {
     const dispatch = useDispatch()
     const onChange = () => {
-        dispatch(toggleCompleted({id}))
+        dispatch(toggleTodo({id}))
     }
     const onClick = () => {
         dispatch(removeTodo({id}))
@@ -16,10 +16,11 @@ const TodoItem = ({id, text, completed}) => {
             <input
                 type={'checkbox'}
                 checked={completed}
-                onChange={onChange}
-            />
+                onChange={onChange}/>
+
             {text}
-            <span className={style.delete} onClick={onClick}>
+
+            <span onClick={onClick} className={style.delete}>
                 &times;
             </span>
         </li>

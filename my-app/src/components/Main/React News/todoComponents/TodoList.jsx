@@ -3,11 +3,12 @@ import {useSelector} from "react-redux";
 import TodoItem from "./TodoItem";
 
 const TodoList = () => {
-    const selectorTodos = useSelector(state => state.todos.todos)
+    const todoListSelector = useSelector(state => state.todos.todos)
+
     return (
         <ol>
             {
-                selectorTodos.map(e => <TodoItem key={e.id}{...e}/>)
+                todoListSelector.map(e => <TodoItem key={e.id}{...e}/>)
             }
         </ol>
     );
