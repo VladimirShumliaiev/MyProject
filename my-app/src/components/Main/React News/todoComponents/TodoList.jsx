@@ -3,9 +3,7 @@ import {useSelector} from "react-redux";
 import TodoItem from "./TodoItem";
 
 const TodoList = () => {
-
     const todoSelector = useSelector(state => state.todos.todos)
-
     return (
         <ol>
             {
