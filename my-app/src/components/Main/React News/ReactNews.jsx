@@ -6,8 +6,8 @@ import InputField from "./todoComponents/InputField";
 import TodoList from "./todoComponents/TodoList";
 
 const ReactNews = () => {
-    const [text, setText] = useState('')
     const dispatch = useDispatch()
+    const [text, setText] = useState('')
     const addTask = () => {
         dispatch(addTodo({text}))
         setText('')

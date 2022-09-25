@@ -1,27 +1,25 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 import {removeTodo, toggleCompleted} from "../../../../Redux/Slices/todoSlice";
-import style from '../ReactNews.module.css'
+import style from '../ReactNews.module.css';
 
 const TodoItem = ({id, text, completed}) => {
     const dispatch = useDispatch()
-    const onChangeItem = () => {
-        dispatch(toggleCompleted({id}))
-    }
-    const onClickButton = () => {
+    const onClickSpan = () => {
         dispatch(removeTodo({id}))
+    }
+    const onChangeInput = () => {
+        dispatch(toggleCompleted({id}))
     }
     return (
         <li>
             <input
-                type={"checkbox"}
+                type={'checkbox'}
                 checked={completed}
-                onChange={onChangeItem}
+                onChange={onChangeInput}
             />
             {text}
-            <span onClick={onClickButton} className={style.delete}>
-                &times;
-            </span>
+            <span className={style.delete} onClick={onClickSpan}>&times;</span>
         </li>
     );
 };
