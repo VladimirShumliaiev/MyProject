@@ -1,6 +1,7 @@
 .item {
     grid-area: main;
-    background: #229fcc;
     padding: 10px;
     text-align: center;
+    color: #002aff;
+    background: #ffdd00;
 }

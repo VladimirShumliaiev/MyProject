@@ -8,7 +8,7 @@ const NavLinkReactLessons = () => {
             <h3>
                 <ol>
                     <li>
-                        <NavLink to={'/oneLessons'}>React redux toolkit</NavLink>
+                        <NavLink to={'/oneLessons'}>One Lessons</NavLink>
                     </li>
 
                     <li>
@@ -16,6 +16,9 @@ const NavLinkReactLessons = () => {
                     </li>
                     <li>
                         <NavLink to={'/threeLessons'}>Three Lessons</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={'/fourLessons'}>Four Lessons</NavLink>
                     </li>
                 </ol>
             </h3>

@@ -19,7 +19,5 @@ export default configureStore({
         oneLessons: oneLessonsSlice,
         test: testTodoSlice,
         twoLessons: twoLessonsSlice,
-
-
     },
 });
