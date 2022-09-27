@@ -18,6 +18,7 @@ const OneLessons = () => {
 
     return (
         <div className={'itemOneLessons'}>
+            Todo-list:
             <OneLessonsInputField
                 text={text}
                 setText={setText}

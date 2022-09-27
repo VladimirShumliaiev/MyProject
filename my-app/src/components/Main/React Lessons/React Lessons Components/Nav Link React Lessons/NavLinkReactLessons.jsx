@@ -8,11 +8,11 @@ const NavLinkReactLessons = () => {
             <h3>
                 <ol>
                     <li>
-                        <NavLink to={'/oneLessons'}>One Lessons</NavLink>
+                        <NavLink to={'/oneLessons'}>One Lessons - React RTK</NavLink>
                     </li>
 
                     <li>
-                        <NavLink to={'/twoLessons'}>Two Lessons</NavLink>
+                        <NavLink to={'/twoLessons'}>Two Lessons - Redux Async</NavLink>
                     </li>
                     <li>
                         <NavLink to={'/threeLessons'}>Three Lessons</NavLink>

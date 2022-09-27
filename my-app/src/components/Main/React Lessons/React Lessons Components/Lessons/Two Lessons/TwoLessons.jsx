@@ -14,6 +14,7 @@ const TwoLessons = () => {
     }
     return (
         <div className={'itemTwoLessons'}>
+           Redux-Async:
             <TwoLessonsInputField text={text} setText={setText} addPost={addTask}/>
             <TwoLessonsList/>
         </div>
