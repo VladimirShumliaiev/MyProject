@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import style from './Test.module.css'
 import {useDispatch, useSelector} from "react-redux";
-import {addTestTodo, fetchTestTodos} from "../../../Redux/Slices/testTodoSlice";
+import {addNewTodos, fetchTestTodos} from "../../../Redux/Slices/testTodoSlice";
 import TestInput from "./Tests Componnets/TestInput";
 import TestList from "./Tests Componnets/TestList";
 
@@ -11,7 +11,7 @@ const Test = () => {
     const dispatch = useDispatch()
 
     const addTask = () => {
-        dispatch(addTestTodo({text}))
+        dispatch(addNewTodos(text))
         setText('')
     }
     useEffect(() => {

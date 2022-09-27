@@ -57,12 +57,48 @@ export const toggleStatus = createAsyncThunk(
             if (!response.ok) {
                 throw new Error('Can\'t toggle task. Server error')
             }
-         dispatch(toggleCompleted({id}))
+            dispatch(toggleCompleted({id}))
         } catch (error) {
             return rejectWithValue(error.message)
         }
     }
 )
+
+export const addNewTodos = createAsyncThunk(
+    'test/addNewTodos',
+    async function (text, {rejectWithValue, dispatch}) {
+        try {
+            const todo = {
+                title: text,
+                completed: false,
+                userId: 1,
+            }
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(todo)
+            })
+
+            if (!response.ok) {
+                throw new Error('Can\'t add task. Server error')
+            }
+
+            const data = await response.json()
+            dispatch(addTestTodo(data))
+
+        } catch (error) {
+            return rejectWithValue(error.massage)
+        }
+    }
+)
+
+const setError = (state, action) => {
+    state.status = 'rejected'
+    state.error = action.payload
+
+}
 
 
 const testTodoSlice = createSlice({
@@ -74,11 +110,7 @@ const testTodoSlice = createSlice({
     },
     reducers: {
         addTestTodo(state, action) {
-            state.testTodo.push({
-                id: new Date().toISOString(),
-                text: action.payload.text,
-                completed: false,
-            })
+            state.testTodo.push(action.payload)
         },
         toggleCompleted(state, action) {
             const toggle = state.testTodo.find(e => e.id === action.payload.id)
@@ -98,10 +130,9 @@ const testTodoSlice = createSlice({
             state.status = 'resolved'
             state.testTodo = action.payload
         },
-        [fetchTestTodos.rejected]: (state, action) => {
-            state.status = 'rejected'
-            state.error = action.payload
-        },
+        [fetchTestTodos.rejected]: setError,
+        [deleteTestTodo.rejected]: setError,
+        [toggleStatus.rejected]: setError,
     }
 })
 

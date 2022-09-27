@@ -3,7 +3,7 @@ import style from './TestItem.module.css'
 import {useDispatch} from "react-redux";
 import {deleteTestTodo, toggleStatus} from "../../../../Redux/Slices/testTodoSlice";
 
-const TestItem = ({id, title, text, completed}) => {
+const TestItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
     return (
         <li>
@@ -12,7 +12,6 @@ const TestItem = ({id, title, text, completed}) => {
                 checked={completed}
                 onChange={() => dispatch(toggleStatus(id))}/>
             {title}
-            {text}
             <span className={style.item} onClick={() => dispatch(deleteTestTodo(id))}>
                 &times;
             </span>
