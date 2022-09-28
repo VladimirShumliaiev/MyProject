@@ -1,17 +1,28 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {removeTodo, toggleCompleted} from "../../../../../../Redux/Slices/oneLessonsSlice";
 import style from './OneLessonsItem.module.css'
+import {removeTodo, toggleTodoCompleted} from "../../../../../../Redux/Slices/oneLessonsSlice";
 
-
-const OneLessonsListItem = ({id, text, completed}) => {
+const OneLessonsListItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
+    const onChangeInput = () => {
+        dispatch(toggleTodoCompleted({id}))
+    }
+    const onClick = () => {
+        dispatch(removeTodo({id}))
+    }
     return (
-        <li>
-            <input type={'checkbox'} checked={completed} onChange={() => dispatch(toggleCompleted({id}))}/>
-            {text}
-            <span className={style.item} onClick={() => dispatch(removeTodo({id}))}>&times;</span>
-        </li>
+        <div>
+            <input
+                type={"checkbox"}
+                checked={completed}
+                onChange={onChangeInput}
+            />
+            {title}
+            <span className={style.item} onClick={onClick}>
+                &times;
+            </span>
+        </div>
     );
 };
 

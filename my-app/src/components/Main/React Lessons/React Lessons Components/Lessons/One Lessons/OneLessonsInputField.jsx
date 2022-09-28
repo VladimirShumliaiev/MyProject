@@ -3,8 +3,8 @@ import React from 'react';
 const OneLessonsInputField = (props) => {
     return (
         <div>
-            <input value={props.text} onChange={(e) => props.setText(e.target.value)}></input>
-            <button onClick={props.addTusk}>Push</button>
+            <input value={props.title} onChange={e => props.setTitle(e.target.value)} placeholder={'...Text'}/>
+            <button onClick={props.addTodo}>Push me</button>
         </div>
     );
 };

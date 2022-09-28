@@ -1,33 +1,25 @@
 import React, {useState} from 'react';
-import './OneLessons.css';
+import './OneLessons.css'
 import {useDispatch} from "react-redux";
-import {addText} from "../../../../../../Redux/Slices/oneLessonsSlice";
+import {addTodo} from "../../../../../../Redux/Slices/oneLessonsSlice";
 import OneLessonsInputField from "./OneLessonsInputField";
 import OneLessonsList from "./OneLessonsList";
 
-
-
 const OneLessons = () => {
-    const [text,setText] = useState('');
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
+    const [title, setTitle] = useState('')
 
-    const addTusk = () => {
-        dispatch(addText({text}))
-        setText('')
+    const addTask = () => {
+        dispatch(addTodo({title}))
+        setTitle('')
     }
 
     return (
-        <div className={'itemOneLessons'}>
-            Todo-list:
-            <OneLessonsInputField
-                text={text}
-                setText={setText}
-                addTusk={addTusk}
-            />
+        <div className='itemOneLessons'>
+            <OneLessonsInputField title={title} setTitle={setTitle} addTodo={addTask}/>
             <OneLessonsList/>
-
         </div>
-    )
+    );
 };
 
 export default OneLessons;
