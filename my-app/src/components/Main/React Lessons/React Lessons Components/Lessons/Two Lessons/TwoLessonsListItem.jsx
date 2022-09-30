@@ -1,15 +1,15 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {removePost, toggleCompleted} from "../../../../../../Redux/Slices/twoLessonsSlice";
+import {fetchDelete, fetchToggleCompleted} from "../../../../../../Redux/Slices/twoLessonsSlice";
 import style from './ListItem.module.css'
 
 const TwoLessonsListItem = ({completed, title, id}) => {
     const dispatch = useDispatch()
     const onClick = () => {
-        dispatch(removePost({id}))
+        dispatch(fetchDelete(id))
     }
     const onChange = () => {
-        dispatch(toggleCompleted({id}))
+        dispatch(fetchToggleCompleted(id))
     }
     return (
         <li>
