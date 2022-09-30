@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
+import './OneLessons.css'
 import {useDispatch} from "react-redux";
 import {addTodo} from "../../../../../../Redux/Slices/oneLessonsSlice";
 import OneLessonsInputField from "./OneLessonsInputField";
 import OneLessonsList from "./OneLessonsList";
-import './OneLessons.css'
 
 const OneLessons = () => {
-    const [title, setTitle] = useState('')
     const dispatch = useDispatch()
+    const [title, setTitle] = useState('')
     const addTodoProps = () => {
         dispatch(addTodo({title}))
         setTitle('')
@@ -21,3 +21,5 @@ const OneLessons = () => {
 };
 
 export default OneLessons;
+
+

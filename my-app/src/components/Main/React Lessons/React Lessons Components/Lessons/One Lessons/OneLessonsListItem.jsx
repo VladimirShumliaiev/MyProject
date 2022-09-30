@@ -5,21 +5,21 @@ import {removeTodo, toggleCompleted} from "../../../../../../Redux/Slices/oneLes
 
 const OneLessonsListItem = ({title, id, completed}) => {
     const dispatch = useDispatch()
-    const onClickButton = () => {
-        dispatch(removeTodo({id}))
-    }
     const onChangeInput = () => {
         dispatch(toggleCompleted({id}))
+    }
+    const onClickSpan = () => {
+        dispatch(removeTodo({id}))
     }
     return (
         <div>
             <input
-                type={'checkbox'}
-                checked={completed}
-                onChange={onChangeInput}
+               type={"checkbox"}
+               checked={completed}
+               onChange={onChangeInput}
             />
             {title}
-            <span className={style.item} onClick={onClickButton}>&times;</span>
+            <span onClick={onClickSpan} className={style.item}>&times;</span>
         </div>
     );
 };

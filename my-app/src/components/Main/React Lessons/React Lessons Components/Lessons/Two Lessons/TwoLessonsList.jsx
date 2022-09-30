@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import TwoLessonsListItem from "./TwoLessonsListItem";
 
 const TwoLessonsList = () => {
-    const TLSelector = useSelector(state => state.twoLessons.posts)
+    const TLSelector = useSelector(state => state.twoLessons.todos)
     return (
         <ol>
             {

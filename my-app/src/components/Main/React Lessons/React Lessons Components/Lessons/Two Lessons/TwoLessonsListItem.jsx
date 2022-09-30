@@ -1,17 +1,20 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {removePost} from "../../../../../../Redux/Slices/twoLessonsSlice";
+import {removePost, toggleCompleted} from "../../../../../../Redux/Slices/twoLessonsSlice";
 import style from './ListItem.module.css'
 
-const TwoLessonsListItem = ({ava, text, id}) => {
+const TwoLessonsListItem = ({completed, title, id}) => {
     const dispatch = useDispatch()
     const onClick = () => {
         dispatch(removePost({id}))
     }
+    const onChange = () => {
+        dispatch(toggleCompleted({id}))
+    }
     return (
         <li>
-            <img src={ava} alt=""/>
-            {text}
+            <input type={"checkbox"} checked={completed} onChange={onChange}/>
+            {title}
             <span onClick={onClick} className={style.deleted}>&times;</span>
         </li>
     );

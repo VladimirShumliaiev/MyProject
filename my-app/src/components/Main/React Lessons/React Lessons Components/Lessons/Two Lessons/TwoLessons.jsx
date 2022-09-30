@@ -6,16 +6,16 @@ import TwoLessonsInputField from "./TwoLessonsInputField";
 import TwoLessonsList from "./TwoLessonsList";
 
 const TwoLessons = () => {
-    const [text, setText] = useState('')
+    const [title, setTitle] = useState('')
     const dispatch = useDispatch()
     const addTask = () => {
-        dispatch(addPost({text}))
-        setText('')
+        dispatch(addPost({title}))
+        setTitle('')
     }
     return (
         <div className={'itemTwoLessons'}>
            Redux-Async:
-            <TwoLessonsInputField text={text} setText={setText} addPost={addTask}/>
+            <TwoLessonsInputField title={title} setTitle={setTitle} addPost={addTask}/>
             <TwoLessonsList/>
         </div>
     );
