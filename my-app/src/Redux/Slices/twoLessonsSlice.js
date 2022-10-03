@@ -32,7 +32,6 @@ export const fetchDelete = createAsyncThunk(
             }
             dispatch(removeTodo({id}))
 
-
         } catch (error) {
             return rejectWithValue(error.message)
         }
@@ -66,7 +65,7 @@ export const fetchToggleCompleted = createAsyncThunk(
 
 export const addNewTodo = createAsyncThunk(
     'TwoLessons/addNewTodo',
-    async function(title,{rejectWithValue,dispatch}){
+    async function (title, {rejectWithValue, dispatch}) {
         try {
             const todos = {
                 title: title,
@@ -80,7 +79,7 @@ export const addNewTodo = createAsyncThunk(
                 },
                 body: JSON.stringify(todos)
             })
-            if(!response.ok){
+            if (!response.ok) {
                 throw new Error('Error add todos')
             }
             const data = await response.json()
@@ -96,9 +95,6 @@ const setError = (state, action) => {
     state.status = 'rejected'
     state.error = action.payload
 }
-
-
-
 
 const twoLessonsSlice = createSlice({
     name: 'TwoLessons',
