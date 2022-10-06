@@ -2,10 +2,11 @@ import {createSlice} from "@reduxjs/toolkit";
 
 
 const oneLessonsSlice = createSlice({
-    name: 'Todo',
+    name: 'todo',
     initialState: {
         todos: []
     },
+
     reducers: {
         addTodo(state, action){
             state.todos.push({
