@@ -1,7 +1,8 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {fetchDelete, fetchToggleCompleted} from "../../../../../../Redux/Slices/twoLessonsSlice";
 import style from './ListItem.module.css'
+import {fetchDelete, fetchToggleCompleted} from "../../../../../../Redux/Slices/twoLessonsSlice";
+
 
 const TwoLessonsListItem = ({completed, title, id}) => {
     const dispatch = useDispatch()

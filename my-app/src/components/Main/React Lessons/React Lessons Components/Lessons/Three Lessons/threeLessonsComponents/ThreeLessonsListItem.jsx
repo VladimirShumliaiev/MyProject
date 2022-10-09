@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {deleteTodo, toggleStatus} from "../../../../../../../Redux/Slices/threeLessonsSlice";
+import {fetchRemoveTodo, toggleStatus,} from "../../../../../../../Redux/Slices/threeLessonsSlice";
 import style from './ThreeLessonsItem.module.css'
 
 const ThreeLessonsListItem = ({id, title, completed}) => {
@@ -9,7 +9,7 @@ const ThreeLessonsListItem = ({id, title, completed}) => {
         dispatch(toggleStatus(id))
     }
     const onClick = () => {
-        dispatch(deleteTodo(id))
+        dispatch(fetchRemoveTodo(id))
     }
     return (
         <div>
