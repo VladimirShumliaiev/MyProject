@@ -1,21 +1,21 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {fetchRemoveTodo, toggleStatus,} from "../../../../../../../Redux/Slices/threeLessonsSlice";
 import style from './ThreeLessonsItem.module.css'
+import {deleteTodo, statusCompleted} from "../../../../../../../Redux/Slices/threeLessonsSlice";
 
-const ThreeLessonsListItem = ({id, title, completed}) => {
+const ThreeLessonsListItem = ({id, completed, title}) => {
     const dispatch = useDispatch()
-    const onChange = () => {
-        dispatch(toggleStatus(id))
-    }
     const onClick = () => {
-        dispatch(fetchRemoveTodo(id))
+        dispatch(deleteTodo({id}))
+    }
+    const onChange = () => {
+        dispatch(statusCompleted({id}))
     }
     return (
         <div>
             <input type={"checkbox"} checked={completed} onChange={onChange}/>
             {title}
-            <span className={style.item} onClick={onClick}>&times;</span>
+            <span onClick={onClick} className={style.item}>&times;</span>
         </div>
     );
 };
