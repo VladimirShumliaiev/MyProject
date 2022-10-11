@@ -67,7 +67,7 @@ export const addNewTodo = createAsyncThunk(
     'TwoLessons/addNewTodo',
     async function (title, {rejectWithValue, dispatch}) {
         try {
-            const todos = {
+            const todo = {
                 title: title,
                 userId: 1,
                 completed: false,
@@ -77,7 +77,7 @@ export const addNewTodo = createAsyncThunk(
                 headers: {
                     'Content-type': 'application/json'
                 },
-                body: JSON.stringify(todos)
+                body: JSON.stringify(todo)
             })
             if (!response.ok) {
                 throw new Error('Error add todos')
