@@ -1,18 +1,15 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
 import style from './ThreeLessonsItem.module.css'
-import {
-    fetchCanselTodo,
-    fetchStatusCompleted,
-} from "../../../../../../../Redux/Slices/threeLessonsSlice";
+import {useDispatch} from "react-redux";
+import {canselTodo, statusCompleted} from "../../../../../../../Redux/Slices/threeLessonsSlice";
 
-const ThreeLessonsListItem = ({id, completed, title}) => {
+const ThreeLessonsListItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
     const onClick = () => {
-        dispatch(fetchCanselTodo(id))
+        dispatch(canselTodo({id}))
     }
     const onChange = () => {
-        dispatch(fetchStatusCompleted(id))
+        dispatch(statusCompleted({id}))
     }
     return (
         <div>
