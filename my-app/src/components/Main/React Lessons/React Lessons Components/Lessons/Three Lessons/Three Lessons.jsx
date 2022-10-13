@@ -3,14 +3,14 @@ import style from './ThreeLessons.module.css'
 import ThreeLessonsInput from "./threeLessonsComponents/ThreeLessonsInput";
 import ThreeLessonsList from "./threeLessonsComponents/ThreeLessonsList";
 import {useDispatch, useSelector} from "react-redux";
-import {addTodos, fetchTodo} from "../../../../../../Redux/Slices/threeLessonsSlice";
+import {addNewTodo, fetchTodo} from "../../../../../../Redux/Slices/threeLessonsSlice";
 
 const ThreeLessons = () => {
     const [title, setTitle] = useState('')
     const {status, error} = useSelector(state => state.threeLessons)
     const dispatch = useDispatch()
     const addTask = () => {
-        dispatch(addTodos({title}))
+        dispatch(addNewTodo(title))
         setTitle('')
     }
 

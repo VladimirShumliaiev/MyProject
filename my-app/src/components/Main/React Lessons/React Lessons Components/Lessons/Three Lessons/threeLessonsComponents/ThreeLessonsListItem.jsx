@@ -1,22 +1,22 @@
 import React from 'react';
 import style from './ThreeLessonsItem.module.css'
 import {useDispatch} from "react-redux";
-import {canselTodo, statusCompleted} from "../../../../../../../Redux/Slices/threeLessonsSlice";
+import {fetchCanselTodo, fetchStatusTodo, statusCompleted} from "../../../../../../../Redux/Slices/threeLessonsSlice";
 
 const ThreeLessonsListItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
     const onClick = () => {
-        dispatch(canselTodo({id}))
+        dispatch(fetchCanselTodo(id))
     }
     const onChange = () => {
-        dispatch(statusCompleted({id}))
+        dispatch(fetchStatusTodo(id))
     }
     return (
-        <div>
+        <li>
             <input type={"checkbox"} checked={completed} onChange={onChange}/>
             {title}
             <span onClick={onClick} className={style.item}>&times;</span>
-        </div>
+        </li>
     );
 };
 
