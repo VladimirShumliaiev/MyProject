@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './ThreeLessonsItem.module.css'
 import {useDispatch} from "react-redux";
-import {fetchCanselTodo, fetchStatusTodo, statusCompleted} from "../../../../../../../Redux/Slices/threeLessonsSlice";
+import {fetchCanselTodo, fetchStatusTodo} from "../../../../../../../Redux/Slices/threeLessonsSlice";
 
 const ThreeLessonsListItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
