@@ -12,14 +12,6 @@ import threeLessonsSlice from "../Slices/threeLessonsSlice";
 
 
 
-
-
-
-
-
-
-
-
 export default configureStore({
     reducer: {
         todos: todoSlice,
