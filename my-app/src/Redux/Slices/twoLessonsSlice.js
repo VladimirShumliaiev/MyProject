@@ -7,7 +7,7 @@ export const fetchTodos = createAsyncThunk(
             const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10')
 
             if (!response.ok) {
-                throw new Error('Server Erorr.')
+                throw new Error('Server-Error.')
             }
             const data = await response.json()
 

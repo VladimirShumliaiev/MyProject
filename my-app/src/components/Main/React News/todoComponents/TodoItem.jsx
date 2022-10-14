@@ -3,7 +3,7 @@ import {useDispatch} from "react-redux";
 import {removeTodo, toggleCompleted} from "../../../../Redux/Slices/todoSlice";
 import style from '../ReactNews.module.css';
 
-const TodoItem = ({id, text, completed}) => {
+const TodoItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
     const onClickSpan = () => {
         dispatch(removeTodo({id}))
@@ -18,7 +18,7 @@ const TodoItem = ({id, text, completed}) => {
                 checked={completed}
                 onChange={onChangeInput}
             />
-            {text}
+            {title}
             <span className={style.delete} onClick={onClickSpan}>&times;</span>
         </li>
     );
