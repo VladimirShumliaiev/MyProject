@@ -3,13 +3,13 @@ import {useSelector} from "react-redux";
 import ThreeLessonsListItem from "./ThreeLessonsListItem";
 
 const ThreeLessonsList = () => {
-    const selector = useSelector(state => state.threeLessons.todoList)
+    const ListSelector = useSelector(state => state.threeLessons.todos)
     return (
-        <ol>
+        <div>
             {
-                selector.map(e => <ThreeLessonsListItem key={e.id} {...e}/>)
+                ListSelector.map(e => <ThreeLessonsListItem key={e.id} {...e}/>)
             }
-        </ol>
+        </div>
     );
 };
 
