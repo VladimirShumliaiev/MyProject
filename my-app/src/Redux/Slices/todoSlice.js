@@ -8,8 +8,8 @@ export const fetchTodo = createAsyncThunk(
             if (!response.ok) {
                 throw new Error('ERROR')
             }
-            const data = response.json()
-            return data
+
+            return response.json()
 
         } catch (error) {
             return rejectWithValue(error.message)
