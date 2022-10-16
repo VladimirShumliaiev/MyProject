@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {fetchCanselTodo, toggleCompleted} from "../../../../Redux/Slices/todoSlice";
+import {fetchCanselTodo, fetchStatusCompleted, toggleCompleted} from "../../../../Redux/Slices/todoSlice";
 import style from '../ReactNews.module.css';
 
 const TodoItem = ({id, title, completed}) => {
@@ -9,7 +9,7 @@ const TodoItem = ({id, title, completed}) => {
         dispatch(fetchCanselTodo(id))
     }
     const onChangeInput = () => {
-        dispatch(toggleCompleted({id}))
+        dispatch(fetchStatusCompleted(id))
     }
     return (
         <li>

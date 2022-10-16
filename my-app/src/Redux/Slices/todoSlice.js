@@ -19,12 +19,12 @@ export const fetchTodo = createAsyncThunk(
 
 export const fetchCanselTodo = createAsyncThunk(
     'todoSlicer/fetchCanselTodo',
-    async function (id,{rejectWithValue,dispatch}){
+    async function (id, {rejectWithValue, dispatch}) {
         try {
-            const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`,{
+            const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
                 method: 'DELETE'
             })
-            if(!response.ok){
+            if (!response.ok) {
                 throw new Error('ERROR delete')
             }
             dispatch(removeTodo({id}))
@@ -32,6 +32,34 @@ export const fetchCanselTodo = createAsyncThunk(
         } catch (error) {
             return rejectWithValue(error.message)
         }
+    }
+)
+
+export const fetchStatusCompleted = createAsyncThunk(
+    'todoSlicer/fetchStatusCompleted',
+    async function (id, {rejectWithValue, dispatch, getState}) {
+        const todo = getState().todos.todos.find(e => e.id === id)
+        try {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`,{
+                method: 'PATCH',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    completed: !todo.completed
+                })
+            })
+
+            if(!response.ok){
+                throw new Error('ERROR 3')
+            }
+
+            dispatch(toggleCompleted({id}))
+
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+
     }
 )
 
@@ -74,6 +102,7 @@ const todoSlice = createSlice({
         },
         [fetchTodo.rejected]: setError,
         [fetchCanselTodo.rejected]: setError,
+        [fetchStatusCompleted.rejected]: setError,
     }
 })
 
