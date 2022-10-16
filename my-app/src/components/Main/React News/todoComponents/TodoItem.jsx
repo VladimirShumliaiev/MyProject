@@ -1,12 +1,12 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {removeTodo, toggleCompleted} from "../../../../Redux/Slices/todoSlice";
+import {fetchCanselTodo, toggleCompleted} from "../../../../Redux/Slices/todoSlice";
 import style from '../ReactNews.module.css';
 
 const TodoItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
     const onClickSpan = () => {
-        dispatch(removeTodo({id}))
+        dispatch(fetchCanselTodo(id))
     }
     const onChangeInput = () => {
         dispatch(toggleCompleted({id}))
