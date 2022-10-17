@@ -8,4 +8,9 @@
 .delete {
     color: #ff1818;
     cursor: pointer;
+    background: #00ff2a;
+}
+
+.userColor {
+    color: #ffdd00;
 }

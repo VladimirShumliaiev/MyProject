@@ -1,28 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import style from './ReactNews.module.css'
+import UserList from "./todoComponents/UserList";
 import {useDispatch, useSelector} from "react-redux";
-import {addTodo, fetchTodo} from "../../../Redux/Slices/todoSlice";
-import InputField from "./todoComponents/InputField";
-import TodoList from "./todoComponents/TodoList";
+import {fetchUsers} from "../../../Redux/Slices/userSlice";
 
 const ReactNews = () => {
     const dispatch = useDispatch()
-    const {error, status} = useSelector(state => state.todos)
-    const [title, setTitle] = useState('')
-    const addTask = () => {
-        dispatch(addTodo({title}))
-        setTitle('')
-    }
+    const {status, error} = useSelector(state => state.users)
 
     useEffect(() => {
-        dispatch(fetchTodo(title))
+        dispatch(fetchUsers())
     },[dispatch])
     return (
         <div className={style.item}>
-            <InputField title={title} setTitle={setTitle} addTodo={addTask}/>
-            {status === 'pending' && <h2>LOADING...</h2>}
-            {error && <h2>ERROR:{error}</h2>}
-            <TodoList/>
+            User list:
+            {status === 'pending' && <h2>Loading...</h2>}
+            {error && <h2>Error:{error}</h2>}
+            <UserList/>
         </div>
     );
 };
