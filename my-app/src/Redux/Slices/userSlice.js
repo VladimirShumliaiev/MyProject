@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 export const fetchUsers = createAsyncThunk(
     'users/fetchUsers',
-    async function(_,{rejectWithValue}){
+    async (_,{rejectWithValue}) =>{
         try{
             const response = await fetch('https://jsonplaceholder.typicode.com/users')
 
@@ -20,7 +20,7 @@ export const fetchUsers = createAsyncThunk(
 
 export const fetchDeleteUser = createAsyncThunk(
     'users/fetchDeleteUser',
-    async (id,{rejectWithValue,dispatch}) => {
+    async  (id,{rejectWithValue,dispatch}) => {
         try {
          const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
                 method: 'DELETE'
@@ -38,12 +38,34 @@ export const fetchDeleteUser = createAsyncThunk(
     }
 )
 
+export const fetchPhotoUser = createAsyncThunk(
+    'users/fetchPhotoUser',
+    async (_,{rejectWithValue}) => {
+        try {
+            const response = await fetch('https://jsonplaceholder.typicode.com/photos/?_limit=15')
+            if(!response.ok){
+                throw new Error('ERROR PHOTO')
+            }
+            return response.json()
+
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
+const setError = (state, action) => {
+        state.status = 'rejected'
+        state.error = action.payload
+    }
+
 
 
 const userSlice = createSlice({
     name: 'users',
     initialState: {
         user: [],
+        photo: [],
         status: null,
         error: null,
     },
@@ -61,14 +83,18 @@ const userSlice = createSlice({
             state.status = 'resolved'
             state.user = action.payload
         },
-        [fetchUsers.rejected]: (state, action) => {
-            state.status = 'rejected'
-            state.error = action.payload
+        [fetchUsers.rejected]: setError,
+        [fetchDeleteUser.rejected]: setError,
+
+        [fetchPhotoUser.pending]: (state) => {
+            state.status = 'pending'
+            state.error = null
         },
-        [fetchDeleteUser.rejected]: (state, action) => {
-            state.status = 'rejected'
-            state.error = action.payload
-        }
+        [fetchPhotoUser.fulfilled]: (state, action) => {
+            state.status = 'resolved'
+            state.photo = action.payload
+        },
+        [fetchPhotoUser.rejected]: setError,
     }
 })
 
