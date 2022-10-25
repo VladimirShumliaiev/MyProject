@@ -5,14 +5,13 @@ import ReactLessons from "../React Lessons/ReactLessons";
 import Test from "../React Tests/Test";
 
 
-
 const RoutingMain = () => {
     return (
-            <Routes>
-                    <Route path={'/ReactLessons'} element={<ReactLessons/>}/>
-                    <Route path={'/ReactNews'} element={<ReactNews/>}/>
-                    <Route path={'/ReactTests'} element={<Test/>}/>
-            </Routes>
+        <Routes>
+            <Route path={'/ReactLessons'} element={<ReactLessons/>}/>
+            <Route path={'/ReactNews'} element={<ReactNews/>}/>
+            <Route path={'/ReactTests'} element={<Test/>}/>
+        </Routes>
     );
 };
 

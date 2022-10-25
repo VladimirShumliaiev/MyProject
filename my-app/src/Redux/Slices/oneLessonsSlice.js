@@ -4,7 +4,26 @@ import {createSlice} from "@reduxjs/toolkit";
 const oneLessonsSlice = createSlice({
     name: 'todo',
     initialState: {
-        todos: []
+        todos: [
+            {
+                id: 1,
+                title: 'one',
+                completed: false
+
+            },
+            {
+                id: 2,
+                title: 'two',
+                completed: false
+
+            },
+            {
+                id: 3,
+                title: 'three',
+                completed: false
+
+            },
+        ]
     },
 
     reducers: {

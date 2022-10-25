@@ -7,7 +7,11 @@ const OneLessonsList = () => {
     return (
         <div>
             {
-                listSelector.map(e => <OneLessonsListItem key={e.id} {...e}/>)
+                listSelector.map(e =>
+                    <OneLessonsListItem
+                        key={e.id}
+                        {...e}
+                    />)
             }
         </div>
     );
