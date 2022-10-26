@@ -5,13 +5,12 @@ import ListOfLessons from "./React Lessons Components/ List of lessons/ ListOfLe
 
 
 const ReactLessons = () => {
-
     return (
         <div className={'itemReactLessons'}>
             <div>
                 React Lessons:
                 {/*<NavLinkReactLessons/>*/}
-                <ListOfLessons />
+                <ListOfLessons/>
             </div>
         </div>
     );

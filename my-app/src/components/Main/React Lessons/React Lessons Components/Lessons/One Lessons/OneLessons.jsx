@@ -31,12 +31,12 @@ const OneLessons = () => {
                 <option value={'2'}>Two</option>
                 <option value={'3'}>Three</option>
             </select>
+
             <p>
-                {value === `1` && <One/>}
+                {value === `1` &&<h2> <One/></h2>}
                 {value === '2' && <Two/>}
                 {value === '3' && <Three/>}
             </p>
-
         </div>
     );
 };
