@@ -18,3 +18,13 @@
     height: 100px;
 }
 
+.back {
+    grid-area: main;
+    background: #ff1818;
+
+}
+
+.colorOption-0 {
+    color: #ff1818;
+}
+

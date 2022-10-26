@@ -3,18 +3,19 @@ import OneLessons from "../Lessons/One Lessons/OneLessons";
 import TwoLessons from "../Lessons/Two Lessons/TwoLessons";
 import ThreeLessons from "../Lessons/Three Lessons/Three Lessons";
 import FourLessons from "../Lessons/FourLessons/FourLessons";
+import style from './ListItem.Module.css'
 
 
 
 const ListOfLessons = () => {
-    const [value, setValue] = useState('')
+    const [select, setSelect] = useState('')
 
     const handleChange = (e) => {
-        setValue(e.target.value)
+        setSelect(e.target.value)
     }
     return (
-        <>
-            <select value={value} onChange={handleChange}>
+        <div  className={style.item}>
+            <select value={select} onChange={handleChange}>
                 <option value={'one'}>One Lessons - React RTK</option>
                 <option value={'two'}>Two Lessons - Redux Async</option>
                 <option value={'three'}>Three Lessons</option>
@@ -24,12 +25,12 @@ const ListOfLessons = () => {
             <hr/>
 
             <p>
-                {value === 'one' && <OneLessons/>}
-                {value === 'two' && <TwoLessons/>}
-                {value === 'three' && <ThreeLessons/>}
-                {value === 'four' && <FourLessons/>}
+                {select === 'one' && <OneLessons/>}
+                {select === 'two' && <TwoLessons/>}
+                {select === 'three' && <ThreeLessons/>}
+                {select === 'four' && <FourLessons/>}
             </p>
-        </>
+        </div>
     );
 };
 

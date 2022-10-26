@@ -11,10 +11,12 @@ const ReactNews = () => {
 
     useEffect(() => {
         dispatch(fetchUsers())
-    },[dispatch])
+    }, [dispatch])
+
     useEffect(() => {
         dispatch(fetchPhotoUser())
-    },[dispatch])
+    }, [dispatch])
+
     return (
         <div className={style.item}>
             User list:

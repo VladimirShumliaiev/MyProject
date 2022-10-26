@@ -9,7 +9,7 @@ const ReactLessons = () => {
         <div className={'itemReactLessons'}>
             <div>
                 React Lessons:
-                {/*<NavLinkReactLessons/>*/}
+                <NavLinkReactLessons/>
                 <ListOfLessons/>
             </div>
         </div>
