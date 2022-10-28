@@ -1,21 +1,24 @@
 import React from 'react';
-import style from './TestItem.module.css'
 import {useDispatch} from "react-redux";
-import {deleteTestTodo, toggleStatus} from "../../../../Redux/Slices/testTodoSlice";
+import {fetchCanselTodo, removeTodoTest, toggleTodoTest} from "../../../../Redux/Slices/testTodoSlice";
+import style from './TestItem.module.css'
 
 const TestItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
+
+    const onClick = () => {
+        dispatch(fetchCanselTodo(id))
+    }
+
+    const onChange = () => {
+        dispatch(toggleTodoTest({id}))
+    }
     return (
-        <li>
-            <input
-                type={'checkbox'}
-                checked={completed}
-                onChange={() => dispatch(toggleStatus(id))}/>
+        <div>
+            <input type={"checkbox"} checked={completed} onChange={onChange}/>
             {title}
-            <span className={style.item} onClick={() => dispatch(deleteTestTodo(id))}>
-                &times;
-            </span>
-        </li>
+            <span className={style.item} onClick={onClick}>&times;</span>
+        </div>
     );
 };
 

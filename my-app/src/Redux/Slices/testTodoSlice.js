@@ -1,140 +1,86 @@
-import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 
-export const fetchTestTodos = createAsyncThunk(
-    'test/fetchTestTodos',
-    async function (_, {rejectWithValue}) {
+export const fetchTodoTest = createAsyncThunk(
+    'test/fetchTodo',
+   async (_,{rejectWithValue}) => {
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=20')
-            if (!response.ok) {
-                throw new Error('Server Error!')
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos/?_limit=30')
+
+            if(!response.ok) {
+                 throw new Error('Error 1')
             }
 
-            const data = await response.json()
+            return response.json()
 
-            return data
-        } catch (error) {
+        }catch (error) {
             return rejectWithValue(error.message)
         }
 
     }
 )
 
-export const deleteTestTodo = createAsyncThunk(
-    'test/deleteTestTodo',
-    async function (id, {rejectWithValue, dispatch}) {
+export const fetchCanselTodo = createAsyncThunk(
+    'test/fetchCanselTodo',
+    async (id,{rejectWithValue,dispatch}) => {
         try {
             const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
                 method: 'DELETE',
             })
-            if (!response.ok) {
-                throw new Error('Can\'t deleted task. Server error')
+            if(!response.ok) {
+                throw new Error('Error 2')
             }
 
-            dispatch(removeTestTodo({id}))
+            dispatch(removeTodoTest({id}))
 
         } catch (error) {
             return rejectWithValue(error.message)
         }
     }
 )
-
-export const toggleStatus = createAsyncThunk(
-    'test/toggleStatus',
-    async function (id, {rejectWithValue, dispatch, getState}) {
-        const todo = getState().test.testTodo.find(e => e.id === id)
-        try {
-            const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    completed: !todo.completed,
-                })
-            })
-
-            if (!response.ok) {
-                throw new Error('Can\'t toggle task. Server error')
-            }
-            dispatch(toggleCompleted({id}))
-        } catch (error) {
-            return rejectWithValue(error.message)
-        }
-    }
-)
-
-export const addNewTodos = createAsyncThunk(
-    'test/addNewTodos',
-    async function (text, {rejectWithValue, dispatch}) {
-        try {
-            const todo = {
-                title: text,
-                completed: false,
-                userId: 1,
-            }
-            const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(todo)
-            })
-
-            if (!response.ok) {
-                throw new Error('Can\'t add task. Server error')
-            }
-
-            const data = await response.json()
-            dispatch(addTestTodo(data))
-
-        } catch (error) {
-            return rejectWithValue(error.massage)
-        }
-    }
-)
-
-const setError = (state, action) => {
-    state.status = 'rejected'
-    state.error = action.payload
-
-}
-
 
 const testTodoSlice = createSlice({
     name: 'test',
     initialState: {
-        testTodo: [],
-        status: null,
+        todoList: [],
         error: null,
+        status: null,
     },
     reducers: {
-        addTestTodo(state, action) {
-            state.testTodo.push(action.payload)
+        addTodoTest(state, action){
+            state.todoList.push({
+                id: new Date().toISOString(),
+                title: action.payload.title,
+                completed: false,
+            })
+
         },
-        toggleCompleted(state, action) {
-            const toggle = state.testTodo.find(e => e.id === action.payload.id)
+        removeTodoTest(state, action){
+            state.todoList = state.todoList.filter(e => e.id !== action.payload.id)
+        },
+        toggleTodoTest(state, action){
+            const toggle = state.todoList.find(e => e.id === action.payload.id)
             toggle.completed = !toggle.completed
         },
-        removeTestTodo(state, action) {
-            state.testTodo = state.testTodo.filter(e => e.id !== action.payload.id)
-        },
-
     },
     extraReducers: {
-        [fetchTestTodos.pending]: (state) => {
-            state.status = 'loading'
+        [fetchTodoTest.pending]: (state) => {
+            state.status = 'pending'
             state.error = null
         },
-        [fetchTestTodos.fulfilled]: (state, action) => {
-            state.status = 'resolved'
-            state.testTodo = action.payload
+        [fetchTodoTest.fulfilled]: (state, action) => {
+            state.status = 'fulfilled'
+            state.todoList = action.payload
         },
-        [fetchTestTodos.rejected]: setError,
-        [deleteTestTodo.rejected]: setError,
-        [toggleStatus.rejected]: setError,
+        [fetchTodoTest.rejected]: (state, action) => {
+            state.status = 'rejected'
+            state.error = action.payload
+        },
+        [fetchCanselTodo.rejected]: (state, action) => {
+            state.status = 'rejected'
+            state.error = action.payload
+        }
     }
 })
-
-export const {addTestTodo, toggleCompleted, removeTestTodo} = testTodoSlice.actions
+export const {addTodoTest, removeTodoTest, toggleTodoTest} = testTodoSlice.actions
 export default testTodoSlice.reducer

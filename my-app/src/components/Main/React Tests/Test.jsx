@@ -1,27 +1,28 @@
-import React, {useState, useEffect} from 'react';
-import style from './Test.module.css'
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {addNewTodos, fetchTestTodos} from "../../../Redux/Slices/testTodoSlice";
+import {addTodoTest, fetchTodoTest} from "../../../Redux/Slices/testTodoSlice";
 import TestInput from "./Tests Componnets/TestInput";
 import TestList from "./Tests Componnets/TestList";
+import style from './Test.module.css'
 
 const Test = () => {
-    const [text,setText] = useState('')
-    const {status, error} = useSelector(state => state.test)
+    const [title, setTitle] = useState('')
+    const {error, status} = useSelector(state => state.testTodo)
     const dispatch = useDispatch()
 
-    const addTask = () => {
-        dispatch(addNewTodos(text))
-        setText('')
+    const addTodo = () => {
+        dispatch(addTodoTest({title}))
+        setTitle('')
     }
+
     useEffect(() => {
-        dispatch(fetchTestTodos())
-    }, [dispatch])
+        dispatch(fetchTodoTest({title}))
+    },[dispatch])
     return (
         <div className={style.item}>
-            <TestInput text={text} setText={setText} addTestTodo={addTask}/>
-            {status === 'loading' && <h2>Loading...</h2>}
-            {error && <h2>An error occured: {error}</h2>}
+            <TestInput title={title} setTitle={setTitle} addTodoTest={addTodo}/>
+            {status === 'rejected' && <h2>Loading...</h2>}
+            {error && <h2>Error: {error}</h2>}
             <TestList/>
         </div>
     );
