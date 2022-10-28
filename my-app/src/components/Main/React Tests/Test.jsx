@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {addTodoTest, fetchTodoTest} from "../../../Redux/Slices/testTodoSlice";
+import {fetchAddTodoTest, fetchTodoTest} from "../../../Redux/Slices/testTodoSlice";
 import TestInput from "./Tests Componnets/TestInput";
 import TestList from "./Tests Componnets/TestList";
 import style from './Test.module.css'
@@ -11,12 +11,12 @@ const Test = () => {
     const dispatch = useDispatch()
 
     const addTodo = () => {
-        dispatch(addTodoTest({title}))
+        dispatch(fetchAddTodoTest(title))
         setTitle('')
     }
 
     useEffect(() => {
-        dispatch(fetchTodoTest({title}))
+        dispatch(fetchTodoTest(title))
     },[dispatch])
     return (
         <div className={style.item}>
