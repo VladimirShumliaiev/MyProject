@@ -18,7 +18,7 @@ const OneLessons = () => {
     return (
         <div className={'itemOneLessons'}>
             <BackMenu/>
-            <OneLessonsInputField title={title} setTitle={setTitle} addTodo={addTask}/>
+            <OneLessonsInputField title={title} setTitle={setTitle} addTodo={addTask} />
             <OneLessonsList/>
             <hr className={'hr'}/>
             <OneLessonsSelect/>

@@ -5,9 +5,16 @@ import style from '../ReactNews.module.css'
 
 const UserItem = ({id, name, username, email, address, phone, website, company}) => {
     const dispatch = useDispatch()
+
     const onClick = () => {
-        dispatch(fetchDeleteUser(id))
+        const del = window.confirm(`do you want to delete the user: ${name}?`)
+        if (del === true) {
+            dispatch(fetchDeleteUser(id))
+        } else {
+            alert(`do not delete ${name}`)
+        }
     }
+
     return (
         <div>
             <ol>

@@ -14,20 +14,16 @@ const OneLessonsSelect = () => {
         <div>
             <select value={value} onChange={handleChange}>
                 <option className={'colorOption-0'} value={'0'}>select one item from the list</option>
-                <hr/>
                 <option value={'1'}>One</option>
-                <hr/>
                 <option value={'2'}>Two</option>
-                <hr/>
                 <option value={'3'}>Three</option>
-                <hr/>
             </select>
 
-            <p>
+            <div>
                 {value === `1` && <One/>}
                 {value === '2' && <Two/>}
                 {value === '3' && <Three/>}
-            </p>
+            </div>
         </div>
     );
 };
