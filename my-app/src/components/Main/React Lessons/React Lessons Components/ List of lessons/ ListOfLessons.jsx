@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import OneLessons from "../Lessons/One Lessons/OneLessons";
 import TwoLessons from "../Lessons/Two Lessons/TwoLessons";
 import ThreeLessons from "../Lessons/Three Lessons/Three Lessons";
-import FourLessons from "../Lessons/FourLessons/FourLessons";
+import FourthLessons from "../Lessons/Fourth Lessons/FourthLessons";
 import style from './ListItem.Module.css'
 
 
@@ -28,7 +28,7 @@ const ListOfLessons = () => {
                 {select === 'one' && <OneLessons/>}
                 {select === 'two' && <TwoLessons/>}
                 {select === 'three' && <ThreeLessons/>}
-                {select === 'four' && <FourLessons/>}
+                {select === 'four' && <FourthLessons/>}
             </p>
         </div>
     );

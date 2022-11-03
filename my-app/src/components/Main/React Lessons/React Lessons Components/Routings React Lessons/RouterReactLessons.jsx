@@ -3,7 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import OneLessons from "../Lessons/One Lessons/OneLessons";
 import TwoLessons from "../Lessons/Two Lessons/TwoLessons";
 import ThreeLessons from "../Lessons/Three Lessons/Three Lessons";
-import FourLessons from "../Lessons/FourLessons/FourLessons";
+import FourthLessons from "../Lessons/Fourth Lessons/FourthLessons";
 
 const RouterReactLessons = () => {
     return (
@@ -11,7 +11,7 @@ const RouterReactLessons = () => {
             <Route path={'/oneLessons'} element={<OneLessons/>}/>
             <Route path={'/twoLessons'} element={<TwoLessons/>}/>
             <Route path={'/threeLessons'} element={<ThreeLessons/>}/>
-            <Route path={'/fourLessons'} element={<FourLessons/>}/>
+            <Route path={'/fourLessons'} element={<FourthLessons/>}/>
         </Routes>
     );
 };
