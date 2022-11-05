@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {addNewTodo, addTodo, fetchTodo} from "../../../../../../Redux/Slices/threeLessonsSlice";
+import {addNewTodo,fetchTodo} from "../../../../../../Redux/Slices/threeLessonsSlice";
 import ThreeLessonsInput from "./threeLessonsComponents/ThreeLessonsInput";
 import ThreeLessonsList from "./threeLessonsComponents/ThreeLessonsList";
 import style from './ThreeLessons.module.css'

@@ -6,7 +6,6 @@ import Footer from "./components/footer/Footer"
 import RoutingCell from "./components/RoutingCell";
 
 
-
 function App() {
     return (
         <div className="App">

@@ -1,6 +1,9 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {removeTodoFourth, toggleTodoFourth} from "../../../../../../../Redux/Slices/fourthLessonsSlice";
+import {
+    fetchDelete,
+    fetchToggle,
+} from "../../../../../../../Redux/Slices/fourthLessonsSlice";
 
 const ListItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
@@ -8,14 +11,14 @@ const ListItem = ({id, title, completed}) => {
     const onClick = () => {
         const del = window.confirm(`DELETE TODO NUMBER - ${id} `)
         if (del === true) {
-            dispatch(removeTodoFourth({id}))
+            dispatch(fetchDelete(id))
         } else {
             alert('CANSEL DELETE')
         }
 
     }
     const onChange = () => {
-        dispatch(toggleTodoFourth({id}))
+        dispatch(fetchToggle(id))
     }
     return (
         <li>
