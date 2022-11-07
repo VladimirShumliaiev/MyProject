@@ -13,9 +13,16 @@ const threeLessonsSlice = createSlice({
                 title: action.payload.title,
                 completed: false
             })
-        }
+        },
+        threeRemoveTodo(state, action){
+            state.threeTodo = state.threeTodo.filter(e => e.id !== action.payload.id)
+        },
+        threeToggleTodo(state, action){
+            const toggle = state.threeTodo.find(e => e.id === action.payload.id)
+            toggle.completed = !toggle.completed
+        },
     }
 })
 
-export const {addTodo} = threeLessonsSlice.actions
+export const {addTodo, threeRemoveTodo, threeToggleTodo} = threeLessonsSlice.actions
 export default threeLessonsSlice.reducer

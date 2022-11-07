@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import style from './ThreeLessons.module.css'
 import ThreeLessonsInput from "./threeLessonsComponents/ThreeLessonsInput";
-import TestList from "../../../../React Tests/Tests Componnets/TestList";
 import {useDispatch} from "react-redux";
 import {addTodo} from "../../../../../../Redux/Slices/threeLessonsSlice";
 import ThreeLessonsList from "./threeLessonsComponents/ThreeLessonsList";

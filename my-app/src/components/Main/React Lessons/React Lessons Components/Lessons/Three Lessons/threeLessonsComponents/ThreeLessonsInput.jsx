@@ -14,17 +14,16 @@ const ThreeLessonsInput = (props) => {
         }
     }
 
-
     return (
-
         <div>
             <input
                 className={style.input}
                 value={props.title}
                 onChange={e => props.setTitle(e.target.value)}
                 onKeyDown={handleKeyPress}
+                placeholder={'Введіть значення...'}
             />
-            <button className={style.button} onClick={props.addTask}>Push</button>
+            <button className={style.button} onClick={props.addTask}>Додати</button>
         </div>
     );
 };

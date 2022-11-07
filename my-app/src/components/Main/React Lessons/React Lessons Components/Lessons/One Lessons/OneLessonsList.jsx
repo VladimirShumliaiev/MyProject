@@ -8,10 +8,7 @@ const OneLessonsList = () => {
         <div>
             {
                 listSelector.map(e =>
-                    <OneLessonsListItem
-                        key={e.id}
-                        {...e}
-                    />)
+                    <OneLessonsListItem key={e.id}{...e}/>)
             }
         </div>
     );

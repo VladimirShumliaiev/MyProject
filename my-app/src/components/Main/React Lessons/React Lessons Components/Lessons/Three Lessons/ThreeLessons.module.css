@@ -1,19 +1,21 @@
 .item{
 
     grid-area: main;
-    background: #fffcfc;
+    background: #fce1e1;
     padding: 10px;
-    color: #1bbe1b;
+    color: #110d06;
     text-align: center;
 }
 
 
 .input {
-    background: #002aff;
-    color: white;
+    background: #cdcdf6;
+    color: #e0850f;
+    border-radius: 15px;
 }
 
 .button {
     background: #002aff;
     color: white;
+    border-radius: 15px;
 }
