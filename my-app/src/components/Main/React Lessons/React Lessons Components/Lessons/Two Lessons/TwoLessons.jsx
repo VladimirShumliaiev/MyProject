@@ -10,10 +10,8 @@ const TwoLessons = () => {
     const {status, error} = useSelector(state => state.twoLessons)
     const dispatch = useDispatch()
     const addTask = () => {
-        if(title.trim().length){
             dispatch(addNewTodo(title))
             setTitle('')
-        }
     }
     useEffect(() => {
         dispatch(fetchTodos())

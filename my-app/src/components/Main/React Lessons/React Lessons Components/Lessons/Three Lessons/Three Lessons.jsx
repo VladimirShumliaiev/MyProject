@@ -1,27 +1,23 @@
-import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {addNewTodo,fetchTodo} from "../../../../../../Redux/Slices/threeLessonsSlice";
-import ThreeLessonsInput from "./threeLessonsComponents/ThreeLessonsInput";
-import ThreeLessonsList from "./threeLessonsComponents/ThreeLessonsList";
+import React, {useState} from 'react';
 import style from './ThreeLessons.module.css'
+import ThreeLessonsInput from "./threeLessonsComponents/ThreeLessonsInput";
+import TestList from "../../../../React Tests/Tests Componnets/TestList";
+import {useDispatch} from "react-redux";
+import {addTodo} from "../../../../../../Redux/Slices/threeLessonsSlice";
+import ThreeLessonsList from "./threeLessonsComponents/ThreeLessonsList";
 
 const ThreeLessons = () => {
-    const {status, error} = useSelector(state => state.threeLessons)
     const [title, setTitle] = useState('')
     const dispatch = useDispatch()
-    const addTusk = () => {
-        dispatch(addNewTodo(title))
+
+    const addTask = () => {
+        dispatch(addTodo({title}))
         setTitle('')
     }
 
-    useEffect(() => {
-        dispatch(fetchTodo())
-    },[dispatch])
     return (
         <div className={style.item}>
-            <ThreeLessonsInput title={title} setTitle={setTitle} addTodo={addTusk}/>
-            {status === 'Pending' && <h2>...LOADING</h2>}
-            {error && <h2>Error:{error}</h2>}
+            <ThreeLessonsInput title={title} setTitle={setTitle} addTask={addTask}/>
             <ThreeLessonsList/>
         </div>
     );

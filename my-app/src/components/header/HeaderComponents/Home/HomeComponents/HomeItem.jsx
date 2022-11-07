@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import style from './HomeItem.module.css'
 import HomePostList from "./HomePostList";
-import TextereaHomeFild from "./TextereaHomeFild";
 import {useDispatch} from "react-redux";
 import {addPosts} from "../../../../../Redux/Slices/homeSlice";
+import TextareaHomeField from "./TextareaHomeField";
 
 
 const HomeItem = () => {
@@ -19,7 +19,7 @@ const HomeItem = () => {
 
     return (
         <div className={style.item}>
-            <TextereaHomeFild
+            <TextareaHomeField
                 text={text}
                 setText={setText}
                 addTusk={addTusk}
