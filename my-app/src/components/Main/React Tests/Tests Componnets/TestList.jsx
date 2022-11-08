@@ -1,13 +1,13 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import TestItem from "./TestItem";
+import TestListItem from "./TestListItem";
 
 const TestList = () => {
-    const todoSelector = useSelector(state => state.testTodo.todoList)
+    const selector = useSelector(state => state.testTodo.test)
     return (
         <div>
             {
-                todoSelector.map(e => <TestItem key={e.id} {...e}/>)
+                selector.map(e => <TestListItem key={e.id} {...e}/>)
             }
         </div>
     );

@@ -9,13 +9,14 @@ const TestInput = (props) => {
 
     const handleOnKeyDown = (e) => {
         if (e.key === 'Enter') {
-            handleSubmit(e)
+          handleSubmit(e)
         }
     }
+
     return (
         <div>
-            <input value={props.title} onChange={e => props.setTitle(e.target.value)} onKeyDown={handleOnKeyDown} placeholder={'...text'}/>
-            <button onClick={props.addTodoTest}>Push test</button>
+            <input value={props.title} onChange={e => props.setTitle(e.target.value)} onKeyDown={handleOnKeyDown} placeholder={'Text...'}/>
+            <button onClick={props.addTodoTest}>Push</button>
         </div>
     );
 };

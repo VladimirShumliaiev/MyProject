@@ -1,17 +1,15 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {fetchCanselTodo, fetchToggleTodo,} from "../../../../Redux/Slices/testTodoSlice";
+import {removeTodoTest, toggleTodoTest} from "../../../../Redux/Slices/testTodoSlice";
 import style from './TestItem.module.css'
 
-const TestItem = ({id, title, completed}) => {
+const TestListItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
-
-    const onClick = () => {
-        dispatch(fetchCanselTodo(id))
-    }
-
     const onChange = () => {
-        dispatch(fetchToggleTodo(id))
+        dispatch(toggleTodoTest({id}))
+    }
+    const onClick = () => {
+        dispatch((removeTodoTest({id})))
     }
     return (
         <div>
@@ -22,4 +20,4 @@ const TestItem = ({id, title, completed}) => {
     );
 };
 
-export default TestItem;
+export default TestListItem;
