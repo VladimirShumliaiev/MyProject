@@ -19,6 +19,9 @@ const NavLinkReactLessons = () => {
                     <li>
                         <NavLink to={'/fourLessons'}>Four Lessons</NavLink>
                     </li>
+                    <li>
+                        <NavLink to={'/FifthLessonCounter'}>Fifth lesson - Counter</NavLink>
+                    </li>
                 </ol>
             </h3>
         </div>

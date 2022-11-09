@@ -1,0 +1,17 @@
+.item {
+    grid-area: main;
+    background: #ffffff;
+    text-align: center;
+}
+
+.buttonPlus {
+background: #25a23d;
+    color: white;
+    border-radius: 10px;
+}
+
+.buttonMinus {
+    background: #ff1818;
+    color: white;
+    border-radius: 10px;
+}
