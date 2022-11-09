@@ -20,7 +20,10 @@ const NavLinkReactLessons = () => {
                         <NavLink to={'/fourLessons'}>Four Lessons</NavLink>
                     </li>
                     <li>
-                        <NavLink to={'/FifthLessonCounter'}>Fifth lesson - Counter</NavLink>
+                        <NavLink to={'/FifthLessons'}>Fifth lesson - Counter</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={'/SixthLessons'}>Sixth lesson - Model window</NavLink>
                     </li>
                 </ol>
             </h3>
