@@ -6,6 +6,7 @@ import ThreeLessons from "../Lessons/Three Lessons/Three Lessons";
 import FourthLessons from "../Lessons/Fourth Lessons/FourthLessons";
 import Counter from "../Lessons/Fifth lesson - Counter/Counter";
 import ModelWindow from "../Lessons/Sixth lesson - model window/ModelWindow";
+import Quiz from "../Lessons/Seventh Lesson/Quiz";
 
 const RouterReactLessons = () => {
     return (
@@ -16,6 +17,7 @@ const RouterReactLessons = () => {
             <Route path={'/fourLessons'} element={<FourthLessons/>}/>
             <Route path={'/FifthLessons'} element={<Counter/>}/>
             <Route path={'/SixthLessons'} element={<ModelWindow/>}/>
+            <Route path={'/SeventhLesson'} element={<Quiz/>}/>
         </Routes>
     );
 };

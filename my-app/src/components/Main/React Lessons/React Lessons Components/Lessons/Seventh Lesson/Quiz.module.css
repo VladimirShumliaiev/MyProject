@@ -1,0 +1,13 @@
+.item {
+    grid-area: main;
+    background: #fdfdfd;
+    text-align: center;
+}
+
+.button {
+    border-radius: 10px;
+    height: 50px;
+    width: 500px;
+
+    background: #fdfdfd;
+}
