@@ -6,27 +6,29 @@ const Counter = () => {
 
     const onClickPlus = () => {
         setCounter(counter + 1)
-        if (counter >= 10) {
-            alert('Maximum +10')
+        if (counter >= 5) {
+            alert('Maximum 5')
             setCounter(0)
         }
     }
+
     const onClickMinus = () => {
         setCounter(counter - 1)
-        if (counter <= -10) {
-            alert('Minimum -10')
+        if (counter <= -5) {
+            alert('Minimum -5')
             setCounter(0)
         }
     }
-    return (
-        <div className={style.item}>
-            <h3>Лічильник:</h3>
-            <h2>{counter}</h2>
-            <button className={style.buttonMinus} onClick={onClickMinus}>- Мінус</button>
+    return (<div className={style.item}>
+            <h2>Лічільник:</h2>
+            <div>
+                <h2>{counter}</h2>
+            </div>
+
+            <button onClick={onClickMinus} className={style.buttonMinus}>- Мінус</button>
             &nbsp;
-            <button className={style.buttonPlus} onClick={onClickPlus}>Плюс +</button>
-        </div>
-    );
+            <button onClick={onClickPlus} className={style.buttonPlus}>Плюс +</button>
+        </div>);
 };
 
 export default Counter;
