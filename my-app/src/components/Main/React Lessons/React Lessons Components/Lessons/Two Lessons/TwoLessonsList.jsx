@@ -2,14 +2,15 @@ import React from 'react';
 import {useSelector} from "react-redux";
 import TwoLessonsListItem from "./TwoLessonsListItem";
 
+
 const TwoLessonsList = () => {
-    const TLSelector = useSelector(state => state.twoLessons.todos)
+    const selector = useSelector(state => state.twoLessons.twoTodo)
     return (
-        <ol>
+        <div>
             {
-                TLSelector.map(e => <TwoLessonsListItem key={e.id} {...e}/>)
+                selector.map(event => <TwoLessonsListItem key={event.id} {...event}/>)
             }
-        </ol>
+        </div>
     );
 };
 

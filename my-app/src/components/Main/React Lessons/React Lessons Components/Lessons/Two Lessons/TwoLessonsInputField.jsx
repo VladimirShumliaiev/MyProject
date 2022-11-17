@@ -1,23 +1,27 @@
 import React from 'react';
 
-
 const TwoLessonsInputField = (props) => {
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        props.addPost()
+    const handlerSubmit = (event) => {
+        event.preventDefault()
+        props.addTwoTodo()
     }
 
-    const handleKeyDown = (e) => {
-        if (e.key === 'Enter') {
-            handleSubmit(e)
+    const handlerKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handlerSubmit(event)
+            props.setTitle('')
         }
-
     }
+
     return (
         <div>
-            <input value={props.title} onChange={e => props.setTitle(e.target.value)} onKeyDown={handleKeyDown} placeholder={'addPosts'}/>
-            <button onClick={props.addPost}>addPosts</button>
+            <input value={props.title}
+                   onChange={event => props.setTitle(event.target.value)}
+                   onKeyDown={handlerKeyDown}
+                   placeholder={'...Text'}
+            />
+            <button onClick={props.addTwoTodo}>Push</button>
         </div>
     );
 };

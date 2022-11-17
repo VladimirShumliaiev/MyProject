@@ -47,7 +47,7 @@ export const fetchToggle = createAsyncThunk(
             const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
                 method: 'PATCH',
                 headers: {
-                    'Content-type': 'application-json'
+                    'Content-type': 'application/json'
                 },
                 body: JSON.stringify({
                     completed: !todo.completed

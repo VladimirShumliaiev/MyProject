@@ -1,23 +1,24 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
+import {fetchRemoveTwoTodo, fetchToggleTwoTodo} from "../../../../../../Redux/Slices/twoLessonsSlice";
 import style from './ListItem.module.css'
-import {fetchDelete, fetchToggleCompleted} from "../../../../../../Redux/Slices/twoLessonsSlice";
 
-
-const TwoLessonsListItem = ({completed, title, id}) => {
+const TwoLessonsListItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
-    const onClick = () => {
-        dispatch(fetchDelete(id))
+
+    const onClickHandler = () => {
+        dispatch(fetchRemoveTwoTodo(id))
     }
-    const onChange = () => {
-        dispatch(fetchToggleCompleted(id))
+
+    const onChangeHandler = () => {
+        dispatch(fetchToggleTwoTodo(id))
     }
     return (
-        <li>
-            <input type={"checkbox"} checked={completed} onChange={onChange}/>
+        <div>
+            <input type={"checkbox"} checked={completed} onChange={onChangeHandler}/>
             {title}
-            <span onClick={onClick} className={style.deleted}>&times;</span>
-        </li>
+            <span className={style.deleted} onClick={onClickHandler}>&times;</span>
+        </div>
     );
 };
 

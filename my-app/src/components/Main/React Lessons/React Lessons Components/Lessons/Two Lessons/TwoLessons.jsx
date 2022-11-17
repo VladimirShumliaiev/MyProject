@@ -1,27 +1,29 @@
 import React, {useEffect, useState} from 'react';
-import './TwoLessons.css';
 import {useDispatch, useSelector} from "react-redux";
-import {addNewTodo, fetchTodos} from "../../../../../../Redux/Slices/twoLessonsSlice";
+import {fetchAddTwoTodo, fetchTwoTodo} from "../../../../../../Redux/Slices/twoLessonsSlice";
+import './TwoLessons.css'
 import TwoLessonsInputField from "./TwoLessonsInputField";
 import TwoLessonsList from "./TwoLessonsList";
 
 const TwoLessons = () => {
     const [title, setTitle] = useState('')
-    const {status, error} = useSelector(state => state.twoLessons)
+    const {error, status} = useSelector(state => state.twoLessons)
     const dispatch = useDispatch()
+
     const addTask = () => {
-            dispatch(addNewTodo(title))
-            setTitle('')
+        dispatch(fetchAddTwoTodo(title))
+        setTitle('')
     }
+
     useEffect(() => {
-        dispatch(fetchTodos())
+        dispatch(fetchTwoTodo())
     },[dispatch])
+
     return (
         <div className={'itemTwoLessons'}>
-           Redux-Async:
-            <TwoLessonsInputField title={title} setTitle={setTitle} addPost={addTask}/>
-            {status === 'loading' && <h2>Loading...</h2>}
-            {error && <h2>error:{error}</h2>}
+            <TwoLessonsInputField title={title} setTitle={setTitle} addTwoTodo={addTask}/>
+            {status === 'pending' && <h2>...Loading</h2>}
+            {error && <h2>Error: {error}</h2>}
             <TwoLessonsList/>
         </div>
     );
