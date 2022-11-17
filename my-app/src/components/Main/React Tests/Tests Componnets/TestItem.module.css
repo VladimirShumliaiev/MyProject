@@ -2,3 +2,20 @@
     color: #ff0101;
    cursor: pointer;
 }
+
+.counterMinus {
+    border-radius: 15px;
+    background: #ff1818;
+}
+
+.counterPlus {
+    border-radius: 15px;
+    background: #00ff2a;
+}
+
+.line {
+    background: #060706;
+    color: #060706;
+    width: 500px;
+    height: 2px;
+}

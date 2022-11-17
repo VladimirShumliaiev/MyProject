@@ -4,6 +4,8 @@ import {addTodoTest} from "../../../Redux/Slices/testTodoSlice";
 import TestInput from "./Tests Componnets/TestInput";
 import TestList from "./Tests Componnets/TestList";
 import style from './Test.module.css'
+import TestCounter from "./Tests Componnets/TestCounter";
+
 
 const Test = () => {
     const [title, setTitle] = useState('')
@@ -17,6 +19,11 @@ const Test = () => {
         <div className={style.item}>
             <TestInput title={title} setTitle={setTitle} addTodoTest={addTask}/>
             <TestList/>
+            <div>
+                <TestCounter/>
+            </div>
+
+
         </div>
     );
 };
