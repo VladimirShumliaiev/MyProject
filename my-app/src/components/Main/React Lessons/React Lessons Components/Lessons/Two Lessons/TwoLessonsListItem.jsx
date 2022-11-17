@@ -7,7 +7,12 @@ const TwoLessonsListItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
 
     const onClickHandler = () => {
-        dispatch(fetchRemoveTwoTodo(id))
+        if (window.confirm(`Delete todo number - ${id}`) === true) {
+            dispatch(fetchRemoveTwoTodo(id))
+        } else {
+            alert(`Cansel delete todo #${id}`)
+        }
+
     }
 
     const onChangeHandler = () => {
