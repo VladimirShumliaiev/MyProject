@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import style from './TestItem.module.css'
+import style from '../TestItem.module.css'
 
 const TestCounter = () => {
     const [counter, setCounter] = useState(0)
