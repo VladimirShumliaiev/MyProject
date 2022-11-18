@@ -1,13 +1,14 @@
 import React from 'react';
 import style from './testQuiz.module.css'
 
-const TestQuizItem = ({onClickVariants, question}) => {
+const TestQuizItem = ({onClickVariant,quest}) => {
     return (
         <div>
-            <h2>{question.title}</h2>
+            <h2>{quest.title}</h2>
             {
-                question.variants.map((event, index) => <div key={event}><button className={style.item} onClick={() => onClickVariants(index)}>{event}</button></div>)
+                quest.variants.map((e,index) => <div key={e}><button className={style.resultButton} onClick={() => onClickVariant(index)}>{e}</button></div>)
             }
+            <hr className={style.line}/>
         </div>
     );
 };

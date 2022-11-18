@@ -17,3 +17,9 @@
     height: 50px;
     border-radius: 15px;
 }
+
+.line {
+    width: 500px;
+    height: 2px;
+    background: #060706;
+}

@@ -26,8 +26,6 @@ const Test = () => {
             <div>
                 <TestQuiz/>
             </div>
-
-
         </div>
     );
 };
