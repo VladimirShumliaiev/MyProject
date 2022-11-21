@@ -3,11 +3,11 @@ import {useSelector} from "react-redux";
 import TestListItem from "./TestListItem";
 
 const TestList = () => {
-    const selector = useSelector(state => state.testTodo.test)
+    const testList = useSelector(state => state.testTodo.testTodo)
     return (
         <div>
             {
-                selector.map(e => <TestListItem key={e.id} {...e}/>)
+                testList.map(e => <TestListItem key={e.id} {...e}/>)
             }
         </div>
     );

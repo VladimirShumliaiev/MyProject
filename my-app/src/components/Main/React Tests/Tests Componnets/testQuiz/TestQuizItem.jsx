@@ -6,7 +6,7 @@ const TestQuizItem = ({quest, onClickVariants}) => {
         <div>
             <h2>Вопрос №{quest.id}: {quest.title}</h2>
             {
-                quest.variants.map((e, index) => <div><button className={style.resultButton} onClick={() => onClickVariants(index)} key={e}>{e}</button></div>)
+                quest.variants.map((e, index) => <div key={e}><button className={style.resultButton} onClick={() => onClickVariants(index)}>{e}</button></div>)
             }
         </div>
     );
