@@ -24,7 +24,8 @@ const TestInput = () => {
 
     return (
         <div>
-            <input value={title} onKeyDown={onKeyDawn} onChange={e => setTitle(e.target.value)} placeholder={'...Text'}/>
+            <input value={title} onKeyDown={onKeyDawn} onChange={e => setTitle(e.target.value)}
+                   placeholder={'...Text'}/>
             <button onClick={addTask}>Button</button>
         </div>
     );

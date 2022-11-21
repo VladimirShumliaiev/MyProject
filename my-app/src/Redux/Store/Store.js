@@ -9,12 +9,6 @@ import fourthLessonsSlice from "../Slices/fourthLessonsSlice";
 import twoLessonsSlice from "../Slices/twoLessonsSlice";
 
 
-
-
-
-
-
-
 export default configureStore({
     reducer: {
         users: userSlice,

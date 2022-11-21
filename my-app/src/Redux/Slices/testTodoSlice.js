@@ -7,17 +7,17 @@ const testTodoSlice = createSlice({
     },
 
     reducers: {
-        addTestTodo(state, action){
+        addTestTodo(state, action) {
             state.testTodo.push({
                 id: new Date().toISOString(),
                 title: action.payload.title,
                 completed: false,
             })
         },
-        removeTestTodo(state, action){
+        removeTestTodo(state, action) {
             state.testTodo = state.testTodo.filter(e => e.id !== action.payload.id)
         },
-        toggleTestTodo(state, action){
+        toggleTestTodo(state, action) {
             const toggle = state.testTodo.find(e => e.id === action.payload.id)
             toggle.completed = !toggle.completed
         },
