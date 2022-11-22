@@ -11,9 +11,11 @@ const TestCounter = () => {
             alert('Minimum -5')
             setCounter(0)
         }
+
     }
     const onClickPlus = () => {
         setCounter(counter + 1)
+
         if (counter >= 5) {
             alert('Maximum 5')
             setCounter(0)
@@ -24,9 +26,9 @@ const TestCounter = () => {
             <hr className={style.line}/>
             <h2>Counter:</h2>
             <h2>{counter}</h2>
-            <button onClick={onClickMinus} className={style.counterMinus}>-Minus</button>
+            <button className={style.counterMinus} onClick={onClickMinus}>- Minus</button>
             &nbsp;
-            <button onClick={onClickPlus} className={style.counterPlus}>Plus+</button>
+            <button className={style.counterPlus} onClick={onClickPlus}>Plus +</button>
             <hr className={style.line}/>
         </div>
     );

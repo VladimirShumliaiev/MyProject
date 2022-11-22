@@ -10,17 +10,15 @@ const TestQuiz = () => {
     const onClickVariants = (index) => {
         setStep(step + 1)
 
-        if (index === correct) {
+        if (index === questions.correct) {
             setCorrect(correct + 1)
         }
     }
-
-    const quest = testQuizList[step]
-
+    const questions = testQuizList[step]
     return (
         <div>
             {
-                step !== testQuizList.length ? <TestQuizItem onClickVariants={onClickVariants} quest={quest}/> : <TestResult correct={correct}/>
+                step !== testQuizList.length ? <TestQuizItem question={questions} onClickVariants={onClickVariants}/> : <TestResult correct={correct}/>
             }
         </div>
     );

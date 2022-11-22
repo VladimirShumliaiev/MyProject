@@ -5,10 +5,10 @@ import testQuizList from "./testQuizList";
 const TestResult = ({correct}) => {
     return (
         <div className={style.result}>
-            <img  src="https://img.freepik.com/free-vector/card-template-with-fireworks-party-horns_1308-3021.jpg?w=2000" alt=""/>
-            <h2>вы ответили {correct} из {testQuizList.length} вопросов</h2>
+            <img src="https://i.gifer.com/origin/70/7002393920593c5fde49da402fd1c7dd_w200.webp" alt=""/>
+            <h2>you answered {correct} from {testQuizList.length} answers</h2>
             <a href="/ReactTests">
-                <button className={style.resultButton}>побробывать снова</button>
+                <button className={style.resultButton}>try again</button>
             </a>
 
         </div>
