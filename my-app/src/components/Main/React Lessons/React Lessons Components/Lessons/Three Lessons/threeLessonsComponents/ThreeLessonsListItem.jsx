@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {threeRemoveTodo, threeToggleTodo} from "../../../../../../../Redux/Slices/threeLessonsSlice";
+import {fetchToggle, threeRemoveTodo} from "../../../../../../../Redux/Slices/threeLessonsSlice";
 
 const ThreeLessonsListItem = ({id, title, completed}) => {
     const dispatch = useDispatch()
@@ -10,7 +10,7 @@ const ThreeLessonsListItem = ({id, title, completed}) => {
     }
 
     const handleOnChange = () => {
-        dispatch(threeToggleTodo({id}))
+        dispatch(fetchToggle(id))
     }
     return (
         <div>
