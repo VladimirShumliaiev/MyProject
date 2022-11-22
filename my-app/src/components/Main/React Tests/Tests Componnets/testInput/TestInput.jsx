@@ -7,6 +7,7 @@ const TestInput = (props) => {
         <form onSubmit={e => {
             e.preventDefault()
             props.putTodo(title)
+            setTitle('')
         }}>
             <input value={title} onChange={e => setTitle(e.target.value)}/>
         </form>

@@ -20,7 +20,7 @@ const TestInputRtk = ({title, addTodo, setTitle}) => {
             <form onSubmit={e => {
                 e.preventDefault()
                 addTodo()
-                setTitle('')
+                // setTitle('')
             }}>
                 <input value={title} onChange={e => setTitle(e.target.value)}/>
                 <button>Click</button>
