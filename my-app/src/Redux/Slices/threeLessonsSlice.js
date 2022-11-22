@@ -2,9 +2,9 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 export const fetchThreeLessons = createAsyncThunk(
     'three/fetchThreeLessons',
-    async (_,{rejectWithValue}) => {
+    async (_, {rejectWithValue}) => {
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/todos/?_limit=32')
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos/?_limit=15')
 
             if (!response.ok) {
                 throw new Error('Error fetchThreeLessons!!!')
@@ -20,7 +20,7 @@ export const fetchThreeLessons = createAsyncThunk(
 
 export const fetchToggle = createAsyncThunk(
     'three/fetchToggle',
-    async (id,{rejectWithValue,dispatch,getState}) => {
+    async (id, {rejectWithValue, dispatch, getState}) => {
         try {
             const todo = getState().threeLessons.threeTodo.find(e => e.id === id)
 
@@ -46,6 +46,56 @@ export const fetchToggle = createAsyncThunk(
     }
 )
 
+export const fetchRemoveThreeTodo = createAsyncThunk(
+    'three/fetchRemoveThreeTodo',
+    async (id, {rejectWithValue, dispatch}) => {
+        try {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+                method: 'DELETE',
+            })
+
+            if (!response.ok) {
+                throw new Error('Error fetchRemoveThreeTodo!!!')
+            }
+
+            dispatch(threeRemoveTodo({id}))
+
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
+export const fetchAddTodoThree = createAsyncThunk(
+    'three/fetchAddTodoThree',
+    async (title, {rejectWithValue, dispatch}) => {
+        try {
+            const todo = {
+                userId: 1,
+                title: title,
+                completed: false,
+            }
+
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(todo)
+            })
+
+            if (!response.ok) {
+                throw new Error('Error fetchAddTodoThree')
+            }
+
+           dispatch(addTodo(await response.json()))
+
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
 
 const threeLessonsSlice = createSlice({
     name: 'three',
@@ -55,17 +105,13 @@ const threeLessonsSlice = createSlice({
         status: null,
     },
     reducers: {
-        addTodo(state, action){
-            state.threeTodo.push({
-                id: new Date().toISOString(),
-                title: action.payload.title,
-                completed: false
-            })
+        addTodo(state, action) {
+            state.threeTodo.push(action.payload)
         },
-        threeRemoveTodo(state, action){
+        threeRemoveTodo(state, action) {
             state.threeTodo = state.threeTodo.filter(e => e.id !== action.payload.id)
         },
-        threeToggleTodo(state, action){
+        threeToggleTodo(state, action) {
             const toggle = state.threeTodo.find(e => e.id === action.payload.id)
             toggle.completed = !toggle.completed
         },

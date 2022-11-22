@@ -19,3 +19,9 @@
     color: white;
     border-radius: 15px;
 }
+
+.line {
+    width: 800px;
+    height: 2px;
+    background: #060706;
+}

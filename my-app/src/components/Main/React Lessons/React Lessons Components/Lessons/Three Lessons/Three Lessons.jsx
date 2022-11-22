@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import style from './ThreeLessons.module.css'
 import ThreeLessonsInput from "./threeLessonsComponents/ThreeLessonsInput";
 import {useDispatch, useSelector} from "react-redux";
-import {addTodo, fetchThreeLessons} from "../../../../../../Redux/Slices/threeLessonsSlice";
+import {fetchAddTodoThree, fetchThreeLessons} from "../../../../../../Redux/Slices/threeLessonsSlice";
 import ThreeLessonsList from "./threeLessonsComponents/ThreeLessonsList";
 
 const ThreeLessons = () => {
@@ -11,7 +11,7 @@ const ThreeLessons = () => {
     const dispatch = useDispatch()
 
     const addTask = () => {
-        dispatch(addTodo({title}))
+        dispatch(fetchAddTodoThree(title))
         setTitle('')
     }
 
@@ -22,6 +22,7 @@ const ThreeLessons = () => {
     return (
         <div className={style.item}>
             <ThreeLessonsInput title={title} setTitle={setTitle} addTask={addTask}/>
+            <hr className={style.line}/>
             {status === 'pending' && <h2>Loading...</h2>}
             {error && <h2>{error}</h2>}
             <ThreeLessonsList/>
