@@ -1,16 +1,16 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {completedTodo, deleteTodo} from "../../../../../Redux/Slices/testTodoSlice";
+import {deleteTodoFetch, statusTodo} from "../../../../../Redux/Slices/testTodoSlice";
 
 const TestInputListItemRtk = ({id, completed, title}) => {
     const dispatch = useDispatch()
 
     const onChangeHandle = () => {
-        dispatch(completedTodo({id}))
+        dispatch(statusTodo(id))
     }
 
     const onClickHandle = () => {
-        dispatch(deleteTodo({id}))
+        dispatch(deleteTodoFetch(id))
     }
 
     return (

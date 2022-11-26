@@ -7,7 +7,7 @@ const TestInputRtk = ({addTodo, setTitle, title}) => {
             addTodo()
         }}>
             <div>
-                <input value={title} onChange={e => setTitle(e.target.value)}/>
+                <input value={title} onChange={e => setTitle(e.target.value)} placeholder={'Text...'}/>
                 <button>Push</button>
             </div>
         </form>
