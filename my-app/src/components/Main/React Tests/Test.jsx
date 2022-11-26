@@ -4,6 +4,9 @@ import TestCounter from "./Tests Componnets/testCounter/TestCounter";
 import TestQuiz from "./Tests Componnets/testQuiz/TestQuiz";
 import TestCall from "./Tests Componnets/testInput/TestCall";
 import TestInputRtkCell from "./Tests Componnets/TestInputRTK/TestInputRtkCell";
+import OneTestNavLink from "./Tests Componnets/oneTest/OneTestNavLink";
+
+
 
 
 const Test = () => {
@@ -20,6 +23,9 @@ const Test = () => {
             </div>
             <div>
                 <TestInputRtkCell/>
+            </div>
+            <div>
+              <OneTestNavLink/>
             </div>
         </div>
     );

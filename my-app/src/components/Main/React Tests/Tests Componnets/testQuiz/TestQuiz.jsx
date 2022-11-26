@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import testQuizList from "./testQuizList";
+import questionsList from "../../../React Lessons/React Lessons Components/Lessons/Seventh Lesson/questionsList";
 import TestQuizItem from "./TestQuizItem";
 import TestResult from "./TestResult";
 
@@ -7,18 +8,20 @@ const TestQuiz = () => {
     const [step, setStep] = useState(0)
     const [correct, setCorrect] = useState(0)
 
-    const onClickVariants = (index) => {
+    const onClickVariants = (i) => {
         setStep(step + 1)
 
-        if (index === questions.correct) {
+        if (i === question.correct) {
             setCorrect(correct + 1)
         }
     }
-    const questions = testQuizList[step]
+
+    const question = testQuizList[step]
+
     return (
         <div>
             {
-                step !== testQuizList.length ? <TestQuizItem question={questions} onClickVariants={onClickVariants}/> : <TestResult correct={correct}/>
+                step !== questionsList.length ? <TestQuizItem question={question} onClickVariants={onClickVariants}/> : <TestResult correct={correct}/>
             }
         </div>
     );

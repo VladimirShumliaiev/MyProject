@@ -3,21 +3,23 @@ import style from './TestInputRtk.module.css'
 import TestInputRtk from "./TestInputRtk";
 import TestInputListRtk from "./TestInputListRtk";
 import {useDispatch} from "react-redux";
-import {addTestTodo} from "../../../../../Redux/Slices/testTodoSlice";
+import {addTodo} from "../../../../../Redux/Slices/testTodoSlice";
 
 const TestInputRtkCell = () => {
     const [title, setTitle] = useState('')
     const dispatch = useDispatch()
 
     const addTask = () => {
-        dispatch(addTestTodo({title}))
+        dispatch(addTodo({title}))
         setTitle('')
     }
+
     return (
         <div>
             <hr className={style.line}/>
             <TestInputRtk title={title} setTitle={setTitle} addTodo={addTask}/>
             <TestInputListRtk/>
+            <hr className={style.line}/>
         </div>
     );
 };

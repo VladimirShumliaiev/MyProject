@@ -1,21 +1,23 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {removeTestTodo, toggleTestTodo} from "../../../../../Redux/Slices/testTodoSlice";
+import {completedTodo, deleteTodo} from "../../../../../Redux/Slices/testTodoSlice";
 
-const TestInputListItemRtk = ({id, title, completed}) => {
+const TestInputListItemRtk = ({id, completed, title}) => {
     const dispatch = useDispatch()
 
-    const onChange  = () => {
-        dispatch(toggleTestTodo({id}))
+    const onChangeHandle = () => {
+        dispatch(completedTodo({id}))
     }
-    const onClick = () => {
-        dispatch(removeTestTodo({id}))
+
+    const onClickHandle = () => {
+        dispatch(deleteTodo({id}))
     }
+
     return (
         <div>
-            <input type={"checkbox"} checked={completed} onChange={onChange} />
+            <input type={"checkbox"} checked={completed} onChange={onChangeHandle}/>
             {title}
-            <span onClick={onClick}>&times;</span>
+            <span onClick={onClickHandle}>&times;</span>
         </div>
     );
 };
