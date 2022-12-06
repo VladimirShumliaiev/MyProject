@@ -4,6 +4,7 @@ import {fetchDeleteUser} from "../../../../Redux/Slices/userSlice";
 import style from '../ReactNews.module.css'
 
 const UserItem = ({id, name, username, email, address, phone, website, company}) => {
+
     const dispatch = useDispatch()
 
     const onClick = () => {

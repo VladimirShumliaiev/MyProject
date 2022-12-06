@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css'
 import {NavLink} from "react-router-dom";
+import headerList from "./headerList";
 
 
 const Header = () => {
@@ -11,10 +12,9 @@ const Header = () => {
         <>
             <div className={'Header'}>
                 <h1>
-                    <NavLink to={'/'} className={setIsActive}>- Home -</NavLink>
-                    <NavLink to={'Blog'} className={setIsActive}> Blog -</NavLink>
-                    <NavLink to={'AboutUs'} className={setIsActive}> AboutUs -</NavLink>
-                    <NavLink to={'Test'} className={setIsActive}> Tests -</NavLink>
+                    {
+                        headerList.map((e) => <NavLink to={e.path} className={setIsActive} key={e.name}>{e.name}{' '}</NavLink> )
+                    }
                 </h1>
             </div>
         </>

@@ -5,6 +5,7 @@ const OneTestNavLink = () => {
     return (
         <div>
             <NavLink to={'/oneTest'}>oneTest</NavLink>
+            <hr/>
         </div>
     );
 };

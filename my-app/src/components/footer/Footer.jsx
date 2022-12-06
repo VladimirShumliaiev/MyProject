@@ -1,11 +1,23 @@
 import React from 'react';
-import style from './Footer.module.css';
+import './Footer.css'
+
+import {NavLink} from "react-router-dom";
 
 const Footer = () => {
+    const footerList =  [{name: 'one', path: '/oneFooter'}, {name: 'two', path: '/twoFooter'}, {name: 'three', path: '/threeFooter'}]
+    const setActive = ({isActive}) => isActive ? 'active-footer' : '';
     return (
-        <div className={style.item}>
-            Footer
-        </div>
+        <>
+            <span className={'item'}>
+                Footer
+            </span>
+            <span className={'itemRight'}>
+              {
+                  footerList.map((e) => <NavLink to={e.path} key={e.name} className={setActive}>{e.name}{' '}</NavLink>)
+              }
+            </span>
+        </>
+
     );
 };
 

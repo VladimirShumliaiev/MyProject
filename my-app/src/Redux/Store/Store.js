@@ -7,6 +7,7 @@ import threeLessonsSlice from "../Slices/threeLessonsSlice";
 import testTodoSlice from "../Slices/testTodoSlice";
 import fourthLessonsSlice from "../Slices/fourthLessonsSlice";
 import twoLessonsSlice from "../Slices/twoLessonsSlice";
+import todosSlice from "../Slices/todosSlice";
 
 
 export default configureStore({
@@ -18,5 +19,6 @@ export default configureStore({
         threeLessons: threeLessonsSlice,
         testTodo: testTodoSlice,
         fourthTodo: fourthLessonsSlice,
+        todos: todosSlice,
     },
 });
