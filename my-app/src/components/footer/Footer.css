@@ -1,9 +1,8 @@
 
-.item {
+.itemLeft {
     grid-area: footerL;
     background: #32cc3f;
     padding: 10px;
-
 }
 
 .itemRight {

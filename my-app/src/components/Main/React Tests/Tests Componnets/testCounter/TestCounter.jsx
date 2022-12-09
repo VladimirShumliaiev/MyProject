@@ -1,31 +1,34 @@
 import React, {useState} from 'react';
-import style from './TestCounter.module.css';
+import style from './TestCounter.module.css'
 
 const TestCounter = () => {
-    const [counter, setCounter] = useState(0);
+    const [value, setValue] = useState(0)
 
-    const onClickMinus = () => {
-        setCounter(counter - 1)
-        if (counter <= -5) {
-            alert('minimum -5')
-            setCounter(0)
+    const onClickButtonPlus = () => {
+        setValue(value + 1)
+        if (value >= 5) {
+            alert('Maximum 5')
+            setValue(0)
+
+
+
+
         }
     }
-    const onClickPlus = () => {
-        setCounter(counter + 1)
-        if (counter >= 5) {
-            alert('minimum 5')
-            setCounter(0)
+    const onClickButtonMinus = () => {
+        setValue(value - 1)
+        if (value <= -5) {
+            alert('Minimum -5')
+            setValue(0)
         }
     }
     return (
         <div>
+            <hr className={style.line}/>
             <h3>Личильник:</h3>
-            <h3>
-                {counter}
-            </h3>
-            <button onClick={onClickMinus} className={style.counterMinus}>Minus -</button>
-            <button onClick={onClickPlus} className={style.counterPlus}>+ Plus</button>
+            <h3>{value}</h3>
+            <button onClick={onClickButtonMinus} className={style.counterMinus}>-Minus</button>{' '}
+            <button onClick={onClickButtonPlus} className={style.counterPlus}>Plus+</button>
             <hr className={style.line}/>
         </div>
     );

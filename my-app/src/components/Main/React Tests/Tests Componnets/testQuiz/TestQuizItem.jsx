@@ -4,9 +4,9 @@ import style from './testQuiz.module.css'
 const TestQuizItem = ({onClickVariants, question}) => {
     return (
         <div>
-            <h2>{question.title}</h2>
+            <h3>{question.title}</h3>
             {
-                question.variants.map((e,index )=> <li key={e} onClick={() => onClickVariants(index)}><button className={style.button}>{e}</button></li>)
+              question.variants.map((e,index) => <div key={index}><button className={style.button} onClick={() => onClickVariants(index)}>{e}</button></div>)
             }
         </div>
     );

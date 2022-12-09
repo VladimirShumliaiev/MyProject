@@ -2,20 +2,20 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 import {canselTodos, statusTodos} from "../../../../../Redux/Slices/todosSlice";
 
-const TodosListItem = ({title, id, completed}) => {
+const TodosListItem = ({id, completed, title}) => {
     const dispatch = useDispatch()
 
-    const onClickHandler = () => {
+    const onClick = () => {
         dispatch(canselTodos({id}))
     }
-    const onChangeHandler = () => {
+    const onChange = () => {
         dispatch(statusTodos({id}))
     }
     return (
         <div>
-            <input type={"checkbox"} checked={completed} onChange={onChangeHandler}/>
+            <input type="checkbox" checked={completed} onChange={onChange}/>
             {title}
-            <span onClick={onClickHandler}>&times;</span>
+            <button onClick={onClick}>x</button>
         </div>
     );
 };

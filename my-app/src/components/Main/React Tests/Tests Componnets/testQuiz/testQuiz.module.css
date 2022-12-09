@@ -5,17 +5,12 @@
     height: 50px;
 }
 
-.result img {
-    background: #ffdd00;
-    width: 250px;
-    height: 250px;
-}
-
 .button {
     background: #01ffe1;
     width: 250px;
     height: 50px;
     border-radius: 15px;
+    margin: 2px;
 }
 
 .line {

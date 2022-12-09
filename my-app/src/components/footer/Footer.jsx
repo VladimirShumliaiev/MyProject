@@ -8,9 +8,9 @@ const Footer = () => {
     const setActive = ({isActive}) => isActive ? 'active-footer' : '';
     return (
         <>
-            <span className={'item'}>
+            <div className={'itemLeft'}>
                 Footer
-            </span>
+            </div>
             <span className={'itemRight'}>
               {
                   footerList.map((e) => <NavLink to={e.path} key={e.name} className={setActive}>{e.name}{' '}</NavLink>)
