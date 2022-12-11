@@ -3,19 +3,24 @@ import {useDispatch} from "react-redux";
 import {addTodos} from "../../../../../Redux/Slices/todosSlice";
 import TodosInput from "./TodosInput";
 import TodosList from "./TodosList";
+import style from './Todos.module.css';
 
 const Todos = () => {
-    const [title, setTitle] = useState('')
+    const [todo, setTodo] = useState('')
     const dispatch = useDispatch()
 
     const addTask = () => {
-        dispatch(addTodos({title}))
-        setTitle('')
+        dispatch(addTodos({todo}))
+        setTodo('')
     }
     return (
         <div>
-            <TodosInput title={title} setTitle={setTitle} addTodos={addTask}/>
-            <TodosList/>
+            <TodosInput title={todo} setTitle={setTodo} addTodos={addTask}/>
+            <br/>
+            <div className={style.todoList}>
+                <TodosList/>
+            </div>
+
         </div>
     );
 };

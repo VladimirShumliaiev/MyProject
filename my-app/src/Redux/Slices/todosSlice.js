@@ -10,7 +10,7 @@ const todosSlice = createSlice({
         addTodos(state, action) {
             state.todos.push({
                 id: new Date().toISOString(),
-                title: action.payload.title,
+                title: action.payload.todo,
                 completed: false,
             })
         },

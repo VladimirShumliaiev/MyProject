@@ -1,13 +1,21 @@
 .itemInput {
-background: #fcf9f9;
-    color: #0a0202;
+background: #ffffff;
+    color: #f6f5f5;
+    margin-right: 10px;
+
 }
 
 .itemButton {
-    background: #ef1616;
-    color: #ffffff;
+    background: #e3d1d1;
+    color: #0a0404;
+    border-radius: 100px;
+    margin-left: 10px;
 }
 
-.listButton {
+.pushButton {
     margin: 5px 10px ;
+}
+
+.todoList {
+    /*text-align: left;*/
 }
