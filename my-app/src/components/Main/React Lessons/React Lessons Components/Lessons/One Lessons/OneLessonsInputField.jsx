@@ -1,23 +1,14 @@
 import React from 'react';
 
-const OneLessonsInputField = (props) => {
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        props.addTodo()
-    }
-
-    const handleKeyDown = (e) => {
-        if (e.key === 'Enter') {
-            handleSubmit(e)
-        }
-    }
+const OneLessonsInputField = ({setTitle, addTodo, title}) => {
     return (
-        <div>
-            <input type={"text"} value={props.title} onChange={e => props.setTitle(e.target.value)}
-                   onKeyDown={handleKeyDown} placeholder={'...Text'}/>
-            <button onClick={props.addTodo}>Push me</button>
-        </div>
+        <form onSubmit={e => {
+            e.preventDefault()
+            addTodo()
+        }}>
+            <input value={title} onChange={e => setTitle(e.target.value)} placeholder={'Text...'}/>
+            <button>push</button>
+        </form>
     );
 };
 

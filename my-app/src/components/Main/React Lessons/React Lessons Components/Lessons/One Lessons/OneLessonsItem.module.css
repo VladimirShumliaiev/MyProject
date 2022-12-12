@@ -1,5 +1,11 @@
 .item {
     cursor: pointer;
-    color: orange;
+    color: #090906;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.input {
+    margin-right: 10px;
 }
 

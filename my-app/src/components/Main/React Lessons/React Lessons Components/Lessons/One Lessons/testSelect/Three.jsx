@@ -3,9 +3,9 @@ import React from 'react';
 const Three = () => {
     return (
         <div>
-            hello world
-            hello world
-            hello world
+            <div> hello world</div>
+            <div> hello world</div>
+            <div> hello world</div>
             <div>
                 <img src="https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg" alt=""/>
             </div>

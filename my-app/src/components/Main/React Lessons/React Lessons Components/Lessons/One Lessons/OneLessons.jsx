@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
-import './OneLessons.css'
 import {useDispatch} from "react-redux";
-import {addTodo} from "../../../../../../Redux/Slices/oneLessonsSlice";
 import OneLessonsInputField from "./OneLessonsInputField";
 import OneLessonsList from "./OneLessonsList";
-import BackMenu from "../../Button-Back-Menu/BackMenu";
+import {addTodo} from "../../../../../../Redux/Slices/oneLessonsSlice";
+import './OneLessons.css'
 import OneLessonsSelect from "./OneLessonseSelect";
-
 const OneLessons = () => {
-    const dispatch = useDispatch()
     const [title, setTitle] = useState('')
+    const dispatch = useDispatch()
+
     const addTask = () => {
         dispatch(addTodo({title}))
         setTitle('')
@@ -17,11 +16,12 @@ const OneLessons = () => {
 
     return (
         <div className={'itemOneLessons'}>
-            <BackMenu/>
-            <OneLessonsInputField title={title} setTitle={setTitle} addTodo={addTask} />
+            <OneLessonsInputField title={title} setTitle={setTitle} addTodo={addTask}/>
+            <br/>
             <OneLessonsList/>
-            <hr className={'hr'}/>
-            <OneLessonsSelect/>
+            <hr/>
+                <OneLessonsSelect/>
+            <hr/>
         </div>
     );
 };
