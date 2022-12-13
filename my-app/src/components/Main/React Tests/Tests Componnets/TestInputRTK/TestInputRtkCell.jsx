@@ -3,7 +3,7 @@ import style from './TestInputRtk.module.css'
 import TestInputRtk from "./TestInputRtk";
 import TestInputListRtk from "./TestInputListRtk";
 import {useDispatch, useSelector} from "react-redux";
-import {addTodo, fetchTestTodo, newTodo} from "../../../../../Redux/Slices/testTodoSlice";
+import {fetchTestTodo, newTodo} from "../../../../../Redux/Slices/testTodoSlice";
 
 const TestInputRtkCell = () => {
     const [title, setTitle] = useState('')

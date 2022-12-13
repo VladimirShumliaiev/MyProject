@@ -9,6 +9,7 @@ import fourthLessonsSlice from "../Slices/fourthLessonsSlice";
 import twoLessonsSlice from "../Slices/twoLessonsSlice";
 import todosSlice from "../Slices/todosSlice";
 import photoSlice from "../Slices/photoSlice";
+import aboutUsSlice from "../Slices/aboutUsSlice";
 
 
 export default configureStore({
@@ -22,5 +23,6 @@ export default configureStore({
         fourthTodo: fourthLessonsSlice,
         todos: todosSlice,
         photo: photoSlice,
+        aboutAs: aboutUsSlice,
     },
 });
