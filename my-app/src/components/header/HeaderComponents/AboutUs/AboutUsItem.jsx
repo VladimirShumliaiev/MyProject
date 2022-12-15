@@ -1,17 +1,21 @@
 import React from 'react';
 import style from './AboutUs.module.css'
 import {useDispatch} from "react-redux";
-import {canselAboutUsTodo, statusAboutUsTodo} from "../../../../Redux/Slices/aboutUsSlice";
+import {removeFetchTodo,statusFetchTodo} from "../../../../Redux/Slices/aboutUsSlice";
 
 const AboutUsItem = ({title, completed, id}) => {
     const dispatch = useDispatch()
 
     const onClick = () => {
-        dispatch(canselAboutUsTodo({id}))
+        const del = window.confirm(`you want to delete todo №id: ${id}`)
+
+        if (del === true) {
+            dispatch(removeFetchTodo(id))
+        }
     }
 
     const onChange = () => {
-      dispatch(statusAboutUsTodo({id}))
+      dispatch(statusFetchTodo(id))
     }
     return (
         <div className={style.aboutUsItem}>

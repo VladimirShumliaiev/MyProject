@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import style from './AboutUs.module.css';
-import {useDispatch} from "react-redux";
-import {addTodoAboutUs, fetchAboutUsTodo} from "../../../../Redux/Slices/aboutUsSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {addFetchTodo, fetchAboutUsTodo} from "../../../../Redux/Slices/aboutUsSlice";
 import AboutUsInput from "./AboutUsInput";
 import AboutUsList from "./AboutUsList";
 
 const AboutUs = () => {
+    const {status, error} = useSelector(state => state.aboutAs)
     const [title, setTitle] = useState('')
     const dispatch = useDispatch()
 
     const addTask = () => {
-        dispatch(addTodoAboutUs({title}))
+        dispatch(addFetchTodo(title))
         setTitle('')
     }
 
@@ -20,6 +21,8 @@ const AboutUs = () => {
     return (
         <div className={style.item}>
            <AboutUsInput title={title} setTitle={setTitle} addTodo={addTask}/>
+            {status === 'pending' && <h3>Loading...</h3>}
+            {error && <h3>{error}</h3>}
             <AboutUsList/>
         </div>
     );
