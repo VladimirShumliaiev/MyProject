@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './AboutUs.module.css'
 
 const AboutUsInput = ({addTodo, setTitle, title}) => {
     return (
@@ -6,7 +7,7 @@ const AboutUsInput = ({addTodo, setTitle, title}) => {
             e.preventDefault()
             addTodo()
         }}>
-            <input value={title} onChange={e => setTitle(e.target.value)}/>
+            <input className={style.input} value={title} onChange={e => setTitle(e.target.value)}/>
             <button>>>>push>>></button>
         </form>
     );

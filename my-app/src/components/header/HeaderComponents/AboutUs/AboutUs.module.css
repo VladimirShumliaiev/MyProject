@@ -1,6 +1,32 @@
-.item{
+.item {
     grid-area: main;
-    background: black;
-    color: white;
+    background: #fffefe;
+    color: #050202;
     padding: 10px;
+}
+
+.button {
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.input {
+    margin-left: 3px;
+}
+
+.inputCheckbox {
+   margin-right: 10px;
+}
+
+.aboutUsItem {
+    margin-top: 10px;
+}
+
+.hr {
+    width: 265px;
+    margin-left: 5px;
+}
+
+.title {
+    margin-top: 10px;
 }
