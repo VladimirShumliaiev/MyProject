@@ -1,14 +1,15 @@
 import React from 'react';
 import style from './AboutUs.module.css'
 
-const AboutUsInput = ({addTodo, setTitle, title}) => {
+const AboutUsInput = ({title, setTitle, addTodo}) => {
     return (
         <form onSubmit={e => {
             e.preventDefault()
             addTodo()
-        }}>
-            <input className={style.input} value={title} onChange={e => setTitle(e.target.value)}/>
-            <button>>>>push>>></button>
+        }
+        }>
+            <input className={style.input}  value={title} onChange={e => setTitle(e.target.value)} placeholder={'Text...'}/>
+            <button>Push</button>
         </form>
     );
 };

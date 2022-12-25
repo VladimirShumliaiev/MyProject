@@ -23,6 +23,6 @@ export default configureStore({
         fourthTodo: fourthLessonsSlice,
         todos: todosSlice,
         photo: photoSlice,
-        aboutAs: aboutUsSlice,
+        aboutUs: aboutUsSlice,
     },
 });

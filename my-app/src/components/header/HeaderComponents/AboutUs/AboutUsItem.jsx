@@ -1,28 +1,23 @@
 import React from 'react';
-import style from './AboutUs.module.css'
 import {useDispatch} from "react-redux";
-import {removeFetchTodo,statusFetchTodo} from "../../../../Redux/Slices/aboutUsSlice";
+import {deleteTodoAbout, toggleTodoAbout} from "../../../../Redux/Slices/aboutUsSlice";
+import style from './AboutUs.module.css'
 
 const AboutUsItem = ({title, completed, id}) => {
     const dispatch = useDispatch()
 
-    const onClick = () => {
-        const del = window.confirm(`you want to delete todo №id: ${id}`)
-
-        if (del === true) {
-            dispatch(removeFetchTodo(id))
-        }
-    }
-
-    const onChange = () => {
-      dispatch(statusFetchTodo(id))
+   const onChangeInput = () => {
+        dispatch(toggleTodoAbout({id}))
+   }
+    const onClickSpan = () => {
+        dispatch(deleteTodoAbout({id}))
     }
     return (
-        <div className={style.aboutUsItem}>
+        <div>
+            <input className={style.inputCheckbox} type={"checkbox"} checked={completed} onChange={onChangeInput}/>
+            {title}
+            <button className={style.button} onClick={onClickSpan}>&times;</button>
             <hr className={style.hr}/>
-            <span> <input onChange={onChange} className={style.inputCheckbox} type="checkbox" checked={completed}/></span>
-            <span className={style.title}>{title}</span>
-            <button onClick={onClick} className={style.button}>&times;</button>
         </div>
     );
 };

@@ -3,11 +3,11 @@ import {useSelector} from "react-redux";
 import AboutUsItem from "./AboutUsItem";
 
 const AboutUsList = () => {
-    const aboutList = useSelector(state => state.aboutAs.aboutUsTodo)
+    const list = useSelector(state => state.aboutUs.todo)
     return (
         <div>
             {
-                aboutList.map(e => <AboutUsItem key={e.id}{...e}/>)
+                list.map(e => <AboutUsItem key={e.id} {...e}/>)
             }
         </div>
     );

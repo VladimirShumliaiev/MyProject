@@ -8,14 +8,19 @@
 .button {
     border-radius: 5px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .input {
     margin-left: 3px;
+    /*padding: 10px;*/
+    cursor: pointer;
 }
 
 .inputCheckbox {
    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 .aboutUsItem {
