@@ -9,7 +9,7 @@ const AboutUsInput = ({title, setTitle, addTodo}) => {
         }
         }>
             <input className={style.input}  value={title} onChange={e => setTitle(e.target.value)} placeholder={'Text...'}/>
-            <button>Push</button>
+            <button>Ok</button>
         </form>
     );
 };
