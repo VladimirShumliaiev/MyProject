@@ -5,11 +5,11 @@ import AboutUsItem from "./AboutUsItem";
 const AboutUsList = () => {
     const list = useSelector(state => state.aboutUs.todo)
     return (
-        <div>
+        <ol>
             {
                 list.map(e => <AboutUsItem key={e.id} {...e}/>)
             }
-        </div>
+        </ol>
     );
 };
 

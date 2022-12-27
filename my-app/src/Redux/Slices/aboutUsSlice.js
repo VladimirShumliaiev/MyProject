@@ -49,6 +49,51 @@ export const addTodoAboutFetch = createAsyncThunk(
     }
 )
 
+export const completeAboutTodo = createAsyncThunk(
+    'aboutUs/completeAboutTodo',
+    async(id,{rejectWithValue,dispatch,getState}) => {
+        const todo = getState().aboutUs.todo.find(e => e.id === id)
+        try {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    completed: !todo.completed
+                })
+            })
+
+            if (!response.ok) {
+                throw new Error('Error completeAboutTodo')
+            }
+
+            dispatch(toggleTodoAbout({id}))
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
+export const deleteAboutTodo = createAsyncThunk(
+    'aboutUs/deleteAboutTodo',
+    async (id, {rejectWithValue, dispatch}) => {
+        try {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+                method: 'DELETE',
+            })
+
+            if (!response.ok) {
+                throw new Error('Error deleteAboutTodo')
+            }
+
+            dispatch(deleteTodoAbout({id}))
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
 const setError = (state, action) => {
     state.status = 'rejected'
     state.error = action.payload
@@ -85,9 +130,10 @@ const aboutUsSlice = createSlice({
         },
         [fetchAboutUsTodo.rejected]: setError,
         [addTodoAboutFetch.rejected]: setError,
+        [completeAboutTodo.rejected]: setError,
 
     }
 })
 
-export const {addTodoAbout, deleteTodoAbout, toggleTodoAbout} = aboutUsSlice.actions
+const {addTodoAbout, deleteTodoAbout, toggleTodoAbout} = aboutUsSlice.actions
 export default aboutUsSlice.reducer

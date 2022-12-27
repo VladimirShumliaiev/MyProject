@@ -14,10 +14,12 @@ const AboutUs = () => {
         dispatch(addTodoAboutFetch(title))
         setTitle('')
     }
-    console.log(addTask)
+
     useEffect(() => {
         dispatch(fetchAboutUsTodo())
     },[])
+    console.log(useEffect)
+
     return (
         <div className={style.item}>
             <AboutUsInput title={title} setTitle={setTitle} addTodo={addTask}/>
