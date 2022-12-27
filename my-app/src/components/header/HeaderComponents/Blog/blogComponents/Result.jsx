@@ -1,15 +1,14 @@
 import React from 'react';
-import questionsList
-    from "../../../../Main/React Lessons/React Lessons Components/Lessons/Seventh Lesson/questionsList";
+import questionList from "./questionList";
 import style from '../Blog.module.css'
 
 const Result = ({correct}) => {
     return (
         <div>
-            <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" alt={''}/>
-            <h2>Вы отгадали {correct} ответа из {questionsList.length}</h2>
-            <a href={"/blog"}>
-                <button className={style.button}>Попробывать ещё</button>
+            <img src="https://www.congratulationmessage.com/images/congratulation-message.png" alt=""/>
+            <h3 className={style.styleResult}>Вы ответили на {correct} из {questionList.length} вопросов</h3>
+            <a href="/Blog">
+                <button className={style.buttonResult}>попробывать снова</button>
             </a>
         </div>
     );

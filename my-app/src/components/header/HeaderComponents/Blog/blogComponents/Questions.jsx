@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 import questionList from "./questionList";
-import Game from "./Game";
+import QuestionsItem from "./QuestionsItem";
 import Result from "./Result";
 
-const Quiz = () => {
+const Questions = () => {
     const [step, setStep] = useState(0)
     const [correct, setCorrect] = useState(0)
 
-    const onClickVariant = (e) => {
+    const onClickVariants = (index) => {
         setStep(step + 1)
 
-        if (e === question.correct) {
+        if (index === question.correct) {
             setCorrect(correct + 1)
         }
     }
@@ -19,10 +19,10 @@ const Quiz = () => {
     return (
         <div>
             {
-                step !== questionList.length ? <Game question={question} onClickVariant={onClickVariant}/> : <Result correct={correct} />
+                step !== questionList.length ? <QuestionsItem question={question} onClickVariants={onClickVariants}/> : <Result correct={correct}/>
             }
         </div>
     );
 };
 
-export default Quiz;
+export default Questions;

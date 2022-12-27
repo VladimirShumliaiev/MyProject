@@ -8,6 +8,17 @@
 .button {
     border-radius: 5px;
     margin: 3px;
-    color: #0080ff;
-    background: #ffdd00;
+    color: #fefeff;
+    background: #ee0f5d;
+}
+
+.buttonResult {
+    border-radius: 5px;
+    margin-left: 125px;
+    color: #ffffff;
+    background: #ee0f5d;
+}
+
+.styleResult {
+    margin-left: 60px;
 }

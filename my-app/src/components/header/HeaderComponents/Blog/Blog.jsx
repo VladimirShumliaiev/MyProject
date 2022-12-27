@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './Blog.module.css';
-import Quiz from "./blogComponents/Quiz";
+import Questions from "./blogComponents/Questions";
 
 const Blog = () => {
     return (
         <div className={style.item}>
-            <Quiz/>
+            <Questions/>
         </div>
     );
 };
