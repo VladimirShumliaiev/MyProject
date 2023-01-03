@@ -12,9 +12,11 @@
 }
 
 .input {
+    margin-top: 3px;
     margin-left: 3px;
     /*padding: 10px;*/
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .inputCheckbox {
@@ -34,4 +36,10 @@
 
 .title {
     margin-top: 10px;
+}
+
+.buttonOk {
+    background: #00ff2a;
+    border-radius: 5px;
+    cursor: pointer;
 }

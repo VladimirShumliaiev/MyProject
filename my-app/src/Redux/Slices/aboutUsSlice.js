@@ -1,14 +1,14 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 
-export const fetchAboutUsTodo = createAsyncThunk(
-    'aboutU/fetchAboutUsTodo',
+export const fetchAboutTodo = createAsyncThunk(
+    'about/fetchAboutTodo',
     async (_, {rejectWithValue}) => {
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/todos/?_limit=15')
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos/?_limit=10')
 
             if (!response.ok) {
-                throw new Error('Error fetchAboutUsTodo')
+                throw new Error('Error-fetchAboutTodo')
             }
 
             return response.json()
@@ -19,75 +19,75 @@ export const fetchAboutUsTodo = createAsyncThunk(
     }
 )
 
-export const addTodoAboutFetch = createAsyncThunk(
-    'aboutUs/addTodoAboutFetch',
-    async (title, {rejectWithValue, dispatch}) => {
-        const todo = {
-            userId: 1,
-            title: title,
-            completed: false,
-        }
-        try {
-          const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
-              method: 'POST',
-              headers: {
-                  'Content-type': 'application/json'
-              },
-              body: JSON.stringify(todo)
-          })
-
-            if (!response.ok) {
-                throw new Error('Error addTodoAboutFetch')
-            }
-
-            dispatch(addTodoAbout(await response.json()))
-
-
-        } catch (error) {
-            return rejectWithValue(error.message)
-        }
-    }
-)
-
-export const completeAboutTodo = createAsyncThunk(
-    'aboutUs/completeAboutTodo',
-    async(id,{rejectWithValue,dispatch,getState}) => {
-        const todo = getState().aboutUs.todo.find(e => e.id === id)
+export const completedAboutFetch = createAsyncThunk(
+    'about/completedAboutFetch',
+    async (id, {rejectWithValue, getState, dispatch}) => {
+        const todo = getState().aboutUs.aboutTodo.find(e => e.id === id)
         try {
             const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-type': 'application/json'
                 },
-                body: JSON.stringify({
-                    completed: !todo.completed
-                })
+                body: JSON.stringify(todo)
             })
 
             if (!response.ok) {
-                throw new Error('Error completeAboutTodo')
+                throw new Error('Error-completedAboutFetch')
             }
 
             dispatch(toggleTodoAbout({id}))
+
         } catch (error) {
             return rejectWithValue(error.message)
         }
     }
 )
 
-export const deleteAboutTodo = createAsyncThunk(
-    'aboutUs/deleteAboutTodo',
-    async (id, {rejectWithValue, dispatch}) => {
+export const deleteFetchTodo = createAsyncThunk(
+    'about/deleteFetchTodo',
+    async (id, {dispatch, rejectWithValue}) => {
         try {
             const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
-                method: 'DELETE',
+                method: 'DELETE'
             })
 
             if (!response.ok) {
-                throw new Error('Error deleteAboutTodo')
+                throw new Error('Error-deleteFetchTodo')
             }
 
-            dispatch(deleteTodoAbout({id}))
+            dispatch(removeTodoAbout({id}))
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
+export const addTodoAboutFetch = createAsyncThunk(
+    'about/addTodoAbout',
+    async (title, {dispatch, rejectWithValue}) => {
+        try {
+            const todo = {
+                userId: 1,
+                title: title,
+                completed: false,
+            }
+
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(todo)
+            })
+
+
+            if (!response.ok) {
+                throw new Error('Error-addTodoAbout')
+            }
+
+            dispatch(addTodoAbout(await response.json()))
+
         } catch (error) {
             return rejectWithValue(error.message)
         }
@@ -100,40 +100,40 @@ const setError = (state, action) => {
 }
 
 const aboutUsSlice = createSlice({
-    name: 'aboutUs',
+    name: 'about',
     initialState: {
-        todo: [],
-        status: null,
+        aboutTodo: [],
         error: null,
+        status: null,
     },
 
     reducers: {
         addTodoAbout(state, action) {
-            state.todo.push(action.payload)
+            state.aboutTodo.push(action.payload)
         },
-        deleteTodoAbout(state, action) {
-            state.todo = state.todo.filter(e => e.id !== action.payload.id)
+        removeTodoAbout(state, action) {
+            state.aboutTodo = state.aboutTodo.filter(e => e.id !== action.payload.id)
         },
         toggleTodoAbout(state, action) {
-            const toggle = state.todo.find(e => e.id === action.payload.id)
+            const toggle = state.aboutTodo.find(e => e.id === action.payload.id)
             toggle.completed = !toggle.completed
-        }
+        },
     },
     extraReducers: {
-        [fetchAboutUsTodo.pending]: (state) => {
+        [fetchAboutTodo.pending]: (state) => {
             state.status = 'pending'
             state.error = null
         },
-        [fetchAboutUsTodo.fulfilled]: (state, action) => {
+        [fetchAboutTodo.fulfilled]: (state, action) => {
             state.status = 'fulfilled'
-            state.todo = action.payload
+            state.aboutTodo = action.payload
         },
-        [fetchAboutUsTodo.rejected]: setError,
+        [fetchAboutTodo.rejected]: setError,
+        [completedAboutFetch.rejected]: setError,
+        [deleteFetchTodo.rejected]: setError,
         [addTodoAboutFetch.rejected]: setError,
-        [completeAboutTodo.rejected]: setError,
-
     }
 })
 
-const {addTodoAbout, deleteTodoAbout, toggleTodoAbout} = aboutUsSlice.actions
+export const {addTodoAbout, removeTodoAbout, toggleTodoAbout} = aboutUsSlice.actions
 export default aboutUsSlice.reducer

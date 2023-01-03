@@ -1,27 +1,33 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 import {
-    completeAboutTodo,
-    deleteAboutTodo,
+    completedAboutFetch,
+    deleteFetchTodo,
+    removeTodoAbout,
+    toggleTodoAbout
 } from "../../../../Redux/Slices/aboutUsSlice";
 import style from './AboutUs.module.css'
 
-const AboutUsItem = ({title, completed, id}) => {
+const AboutUsItem = ({completed, id, title}) => {
     const dispatch = useDispatch()
 
     const onChangeInput = () => {
-        dispatch(completeAboutTodo(id))
+        dispatch(completedAboutFetch(id))
     }
     const onClickButton = () => {
-        dispatch(deleteAboutTodo(id))
+        const del = window.confirm('DELETE todo?')
+        if (del === true) {
+            dispatch(deleteFetchTodo(id))
+        }
+
     }
     return (
-        <li>
-            <input className={style.inputCheckbox} type={"checkbox"} checked={completed} onChange={onChangeInput}/>
+        <div>
+            <input className={style.inputCheckbox} type="checkbox" checked={completed} onChange={onChangeInput}/>
             {title}
             <button className={style.button} onClick={onClickButton}>&times;</button>
             <hr className={style.hr}/>
-        </li>
+        </div>
     );
 };
 
