@@ -6,3 +6,11 @@
     text-decoration: none;
 }
 
+.item2 {
+    grid-area: main;
+    background: #2cf1da;
+    color: #020909;
+    padding: 10px;
+    text-decoration: none;
+}
+

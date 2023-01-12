@@ -13,11 +13,13 @@ import Quiz from "./React Lessons Components/Lessons/Seventh Lesson/Quiz";
 
 
 const ReactLessons = () => {
+
+    const isActive = ({isActive}) => isActive ? 'active-link-lessons' : ''
     return (
         <div className={'itemReactLessons'}>
             <>
                 React Lessons:
-                <NavLinkReactLessons/>
+                <NavLinkReactLessons isActive={isActive}/>
                 <Routes>
                     <Route path={'oneLessons'} element={<OneLessons/>}/>
                     <Route path={'twoLessons'} element={<TwoLessons/>}/>

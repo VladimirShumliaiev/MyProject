@@ -6,6 +6,7 @@ import TestCall from "./Tests Componnets/testInput/TestCall";
 import TestInputRtkCell from "./Tests Componnets/TestInputRTK/TestInputRtkCell";
 import OneTestNavLink from "./Tests Componnets/oneTest/OneTestNavLink";
 import Todos from "./Tests Componnets/todo/Todos";
+import TestRouting from "./Tests Componnets/oneTest/TestRouting";
 
 
 
@@ -27,6 +28,7 @@ const ReactTest = () => {
             </div>
             <div>
               <OneTestNavLink/>
+                <TestRouting/>
             </div>
             <div>
                 <Todos/>

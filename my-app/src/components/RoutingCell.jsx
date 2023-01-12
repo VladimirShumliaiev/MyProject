@@ -20,10 +20,9 @@ const RoutingCell = () => {
                     <Route path={'aboutUs'} element={<AboutUs/>}/>
                     <Route path={'test'} element={<Test/>}/>
                     <Route path={'*'} element={<NotFoundPage/>}/>
-
                     <Route path={'ReactLessons/*'} element={<ReactLessons/>}/>
                     <Route path={'ReactNews'} element={<ReactNews/>}/>
-                    <Route path={'ReactTests'} element={<ReactTest/>}/>
+                    <Route path={'ReactTests/*'} element={<ReactTest/>}/>
                 </Route>
             </Routes>
 
