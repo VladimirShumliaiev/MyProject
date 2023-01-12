@@ -5,8 +5,7 @@ import style from './OneTest.module.css'
 const OneTest = () => {
     return (
         <div className={style.item}>
-            hi
-
+            <h3>hi</h3>
         </div>
     );
 };

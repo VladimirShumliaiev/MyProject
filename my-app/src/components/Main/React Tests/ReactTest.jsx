@@ -10,7 +10,7 @@ import Todos from "./Tests Componnets/todo/Todos";
 
 
 
-const Test = () => {
+const ReactTest = () => {
     return (
         <div className={style.item}>
             <div>
@@ -35,4 +35,4 @@ const Test = () => {
     );
 };
 
-export default Test;
+export default ReactTest;
