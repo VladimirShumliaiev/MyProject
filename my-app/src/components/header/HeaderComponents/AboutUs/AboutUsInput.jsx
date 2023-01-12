@@ -8,7 +8,7 @@ const AboutUsInput = ({addTodo, title, setTitle}) => {
             addTodo()
         }}>
             <input className={style.input} value={title} onChange={e => setTitle(e.target.value)} placeholder={'Text...'}/>
-            <button className={style.buttonOk}>add todo</button>
+            <button className={style.buttonOk}>add Todo</button>
         </form>
     );
 };

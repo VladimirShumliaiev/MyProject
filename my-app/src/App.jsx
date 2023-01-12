@@ -11,9 +11,9 @@ import RoutingCell from "./components/RoutingCell";
 function App() {
     return (
         <div className="App">
-            <Header/>
-            <NavBar/>
-            <Footer/>
+            {/*<Header/>*/}
+            {/*<NavBar/>*/}
+            {/*<Footer/>*/}
             <RoutingCell/>
         </div>
 

@@ -7,26 +7,26 @@ const NavLinkReactLessons = () => {
             <h3>
                 <ol>
                     <li>
-                        <NavLink to={'/oneLessons'}>One Lessons - React RTK</NavLink>
+                        <NavLink to={'ReactLessons//oneLessons'}>One Lessons - React RTK</NavLink>
                     </li>
 
                     <li>
-                        <NavLink to={'/twoLessons'}>Two Lessons - Redux Async</NavLink>
+                        <NavLink to={'ReactLessons//twoLessons'}>Two Lessons - Redux Async</NavLink>
                     </li>
                     <li>
-                        <NavLink to={'/threeLessons'}>Three Lessons</NavLink>
+                        <NavLink to={'ReactLessons//threeLessons'}>Three Lessons</NavLink>
                     </li>
                     <li>
-                        <NavLink to={'/fourLessons'}>Four Lessons</NavLink>
+                        <NavLink to={'ReactLessons//fourLessons'}>Four Lessons</NavLink>
                     </li>
                     <li>
-                        <NavLink to={'/FifthLessons'}>Fifth lesson - Counter</NavLink>
+                        <NavLink to={'ReactLessons//FifthLessons'}>Fifth lesson - Counter</NavLink>
                     </li>
                     <li>
-                        <NavLink to={'/SixthLessons'}>Sixth lesson - Model window</NavLink>
+                        <NavLink to={'ReactLessons//SixthLessons'}>Sixth lesson - Model window</NavLink>
                     </li>
                     <li>
-                        <NavLink to={'/SeventhLesson'}>Seventh lesson - Quiz</NavLink>
+                        <NavLink to={'ReactLessons//SeventhLesson'}>Seventh lesson - Quiz</NavLink>
                     </li>
                 </ol>
             </h3>
