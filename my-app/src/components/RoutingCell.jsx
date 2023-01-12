@@ -9,6 +9,7 @@ import NotFoundPage from "./header/HeaderComponents/NotFoundPage/NotFoundPage";
 import ReactLessons from "./Main/React Lessons/ReactLessons";
 import ReactNews from "./Main/React News/ReactNews";
 import ReactTest from "./Main/React Tests/ReactTest";
+import OurWebsite from "./footer/ourWebsite";
 
 const RoutingCell = () => {
     return (
@@ -23,6 +24,7 @@ const RoutingCell = () => {
                     <Route path={'ReactLessons/*'} element={<ReactLessons/>}/>
                     <Route path={'ReactNews'} element={<ReactNews/>}/>
                     <Route path={'ReactTests/*'} element={<ReactTest/>}/>
+                    <Route path={'oneFooter'} element={<OurWebsite/>}/>
                 </Route>
             </Routes>
 

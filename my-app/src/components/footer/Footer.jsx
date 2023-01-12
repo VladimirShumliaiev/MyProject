@@ -4,7 +4,6 @@ import './Footer.css'
 import {NavLink} from "react-router-dom";
 
 const Footer = () => {
-    const footerList =  [{name: 'one', path: '/oneFooter'}, {name: 'two', path: '/twoFooter'}, {name: 'three', path: '/threeFooter'}]
     const setActive = ({isActive}) => isActive ? 'active-footer' : '';
     return (
         <>
@@ -12,9 +11,7 @@ const Footer = () => {
                 Footer
             </div>
             <span className={'itemRight'}>
-              {
-                  footerList.map((e) => <NavLink to={e.path} key={e.name} className={setActive}>{e.name}{' '}</NavLink>)
-              }
+             <NavLink to={'oneFooter'} className={setActive}>{'our website'}{' '}</NavLink>
             </span>
         </>
 

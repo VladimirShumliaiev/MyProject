@@ -4,3 +4,7 @@
     width: 500px;
     height: 2px;
 }
+
+.delete {
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 import {deleteTodoFetch, statusTodo} from "../../../../../Redux/Slices/testTodoSlice";
+import style from './TestInputRtk.module.css'
 
 const TestInputListItemRtk = ({id, completed, title}) => {
     const dispatch = useDispatch()
@@ -10,14 +11,19 @@ const TestInputListItemRtk = ({id, completed, title}) => {
     }
 
     const onClickHandle = () => {
-        dispatch(deleteTodoFetch(id))
+        const deleteTodo = window.confirm('Delete todo?')
+
+        if (deleteTodo === true) {
+            dispatch(deleteTodoFetch(id))
+        }
+
     }
 
     return (
         <div>
             <input type={"checkbox"} checked={completed} onChange={onChangeHandle}/>
             {title}
-            <span onClick={onClickHandle}>&times;</span>
+            <span className={style.delete} onClick={onClickHandle}>&times;</span>
         </div>
     );
 };
