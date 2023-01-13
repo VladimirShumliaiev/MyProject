@@ -10,7 +10,7 @@ const Questions = () => {
     const onClickVariants = (index) => {
         setStep(step + 1)
 
-        if (index === question.correct) {
+        if (index === question.correct ) {
             setCorrect(correct + 1)
         }
     }
@@ -19,7 +19,7 @@ const Questions = () => {
     return (
         <div>
             {
-                step !== questionList.length ? <QuestionsItem question={question} onClickVariants={onClickVariants}/> : <Result correct={correct}/>
+                step !== questionList.length ? <QuestionsItem  question={question} onClickVariants={onClickVariants}/> : <Result correct={correct}/>
             }
         </div>
     );

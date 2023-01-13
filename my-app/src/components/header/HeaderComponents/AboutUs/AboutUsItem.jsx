@@ -1,33 +1,30 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
-import {
-    completedAboutFetch,
-    deleteFetchTodo,
-    removeTodoAbout,
-    toggleTodoAbout
-} from "../../../../Redux/Slices/aboutUsSlice";
 import style from './AboutUs.module.css'
+import {useDispatch} from "react-redux";
+import {completedTodo, deleteTodo} from "../../../../Redux/Slices/aboutUsSlice";
 
-const AboutUsItem = ({completed, id, title}) => {
+const AboutUsItem = ({id, completed, title}) => {
     const dispatch = useDispatch()
 
-    const onChangeInput = () => {
-        dispatch(completedAboutFetch(id))
+    const oneChangeInput = () => {
+        dispatch(completedTodo({id}))
     }
-    const onClickButton = () => {
-        const del = window.confirm('DELETE todo?')
-        if (del === true) {
-            dispatch(deleteFetchTodo(id))
-        }
+    const oneClickDeleteTodo = () => {
+        const del = window.confirm('delete todo?')
 
+        if (del === true) {
+            dispatch(deleteTodo({id}))
+        }
     }
     return (
-        <div>
-            <input className={style.inputCheckbox} type="checkbox" checked={completed} onChange={onChangeInput}/>
-            {title}
-            <button className={style.button} onClick={onClickButton}>&times;</button>
+        <li>
+            <input className={style.inputCheckbox} type="checkbox" checked={completed} onChange={oneChangeInput}/>
+            <span className={style.title}>
+                {title}
+            </span>
+            <button onClick={oneClickDeleteTodo} className={style.button}>X</button>
             <hr className={style.hr}/>
-        </div>
+        </li>
     );
 };
 

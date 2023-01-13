@@ -1,14 +1,14 @@
 import React from 'react';
-import style from '../Blog.module.css';
+import style from '../Blog.module.css'
 
 const QuestionsItem = ({question, onClickVariants}) => {
     return (
-        <h3>
-            {question.title}
+        <div>
+            <h3>{question.title}</h3>
             {
-                question.variants.map((e, index) => <li key={e} onClick={() => onClickVariants(index)}><button className={style.button}>{e}</button></li>)
+                question.variants.map((e, index) => <div key={e}><button onClick={() => onClickVariants(index)} className={style.button}>{e}</button></div>)
             }
-        </h3>
+        </div>
     );
 };
 
