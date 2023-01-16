@@ -5,8 +5,6 @@ import questionList from "./questionList";
 
 const Result = ({correct}) => {
     return (
-
-
         <div>
             <img src="https://www.congratulationmessage.com/images/congratulation-message.png" alt=""/>
 
@@ -14,6 +12,7 @@ const Result = ({correct}) => {
             <a href="/Blog">
                 <button className={style.buttonResult}>New game start</button>
             </a>
+
         </div>
 
     );
