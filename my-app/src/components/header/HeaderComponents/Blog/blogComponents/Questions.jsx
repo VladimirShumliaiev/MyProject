@@ -5,21 +5,22 @@ import Result from "./Result";
 
 const Questions = () => {
     const [step, setStep] = useState(0)
-    const [correct, setCorrect] = useState(0)
+    const [correct, setCorrect] =useState(0)
 
     const onClickVariants = (index) => {
         setStep(step + 1)
 
-        if (index === question.correct ) {
+        if (index === question.correct) {
             setCorrect(correct + 1)
         }
     }
 
     const question = questionList[step]
+
     return (
         <div>
             {
-                step !== questionList.length ? <QuestionsItem  question={question} onClickVariants={onClickVariants}/> : <Result correct={correct}/>
+                step !== questionList.length ? <QuestionsItem question={question} onClickVariants={onClickVariants}/> : <Result correct={correct}/>
             }
         </div>
     );
