@@ -28,6 +28,9 @@ const NavLinkReactLessons = ({isActive}) => {
                     <li>
                         <NavLink className={isActive} to={'SeventhLesson'}>Seventh lesson - Quiz</NavLink>
                     </li>
+                    <li>
+                        <NavLink className={isActive} to={'EightLessons'}>Eight lessons - Post</NavLink>
+                    </li>
                 </ol>
             </h3>
         </div>

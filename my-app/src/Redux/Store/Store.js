@@ -10,6 +10,7 @@ import twoLessonsSlice from "../Slices/twoLessonsSlice";
 import todosSlice from "../Slices/todosSlice";
 import photoSlice from "../Slices/photoSlice";
 import aboutUsSlice from "../Slices/aboutUsSlice";
+import postSlice from "../Slices/postSlice";
 
 
 export default configureStore({
@@ -24,5 +25,6 @@ export default configureStore({
         todos: todosSlice,
         photo: photoSlice,
         aboutUs: aboutUsSlice,
+        myPost: postSlice,
     },
 });
