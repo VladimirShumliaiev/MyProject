@@ -8,12 +8,12 @@ const PostInput = ({title, setTitle, body, setBody, addPost}) => {
             if(title !== '' && body !== '') {
                 addPost()
             } else {
-                if (title === '') {
-                    alert('add title plz')
-                }
-                if (body === '') {
-                    alert('add post plz')
-                }
+                // if (title === '' || body === '') {
+                    alert('add title or body please')
+                // }
+                // if (body === '') {
+                //     alert('add post plz')
+                // }
             }
 
 

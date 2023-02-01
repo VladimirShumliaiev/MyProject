@@ -1,30 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import myStyle from './Post.module.css'
 import {useDispatch} from "react-redux";
 import {deletePost} from "../../../../../../Redux/Slices/postSlice";
 
 const PostItem = ({title, body, id}) => {
+    const [like, setLike] = useState(0)
     const dispatch = useDispatch()
 
-  const onClickDel = () => {
-        dispatch(deletePost({id}))
-  }
+    const onClickLike = () => {
+        setLike(like + 1)
+    }
+
+    const onClickDel = () => {
+        const del = window.confirm('delete Post?')
+            if (del) {
+                dispatch(deletePost({id}))
+            }
+    }
 
     return (
-        <li className={myStyle.item}>
-            <div className={myStyle.post}>
+        <div className={myStyle.item}>
+            <span className={myStyle.post}>
                 <hr/>
-                <div>Title:{title}</div>
-                <div>Post:{body} </div>
-            </div>
+                <li><h5>Title:{title}</h5></li>
+                Post: {body}
+                <div className={myStyle.like}><img onClick={onClickLike} src="https://vjoy.cc/wp-content/uploads/2020/05/dbe2ee2dbdeeadd89c04ba6dccad3fab.png" alt=""/> like: {like}</div>
+
+            </span>
             <div className={myStyle.r}>
                 <hr/>
-                <button onClick={onClickDel} className={myStyle.delete}>delete</button>
+                <button onClick={onClickDel} className={myStyle.delete}>delete post</button>
             </div>
-
-
-
-        </li>
+        </div>
     );
 };
 

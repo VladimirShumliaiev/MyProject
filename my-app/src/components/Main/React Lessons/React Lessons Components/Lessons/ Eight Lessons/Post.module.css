@@ -13,13 +13,11 @@
 
 .post {
     grid-area: b;
-    /*width: 500px;*/
-    margin-left: 10px;
-    margin-right: 10px;
-    background: #00ff2a;
+
 }
 
 .delete {
+    margin-top: 50px;
     /*margin-left: 400px;*/
     border-radius: 5px;
     background: #f7f8f7;
@@ -41,5 +39,9 @@
     /*margin-top: 7px;*/
     /*margin-left: 400px;*/
     border-radius: 5px;
-    background: #00ff2a;
+}
+
+.like img{
+    width: 20px;
+    height: 20px;
 }
