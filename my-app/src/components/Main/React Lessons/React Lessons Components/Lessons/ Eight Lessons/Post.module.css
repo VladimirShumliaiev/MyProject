@@ -41,7 +41,12 @@
     border-radius: 5px;
 }
 
+.like {
+    cursor: pointer;
+}
+
 .like img{
     width: 20px;
     height: 20px;
+    cursor: pointer;
 }

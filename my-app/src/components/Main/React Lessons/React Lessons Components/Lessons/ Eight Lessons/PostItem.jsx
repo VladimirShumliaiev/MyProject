@@ -13,9 +13,9 @@ const PostItem = ({title, body, id}) => {
 
     const onClickDel = () => {
         const del = window.confirm('delete Post?')
-            if (del) {
-                dispatch(deletePost({id}))
-            }
+        if (del) {
+            dispatch(deletePost({id}))
+        }
     }
 
     return (
@@ -24,7 +24,9 @@ const PostItem = ({title, body, id}) => {
                 <hr/>
                 <li><h5>Title:{title}</h5></li>
                 Post: {body}
-                <div onClick={onClickLike} className={myStyle.like}><img  src="https://vjoy.cc/wp-content/uploads/2020/05/dbe2ee2dbdeeadd89c04ba6dccad3fab.png" alt=""/> like: {like}</div>
+                <div><span className={myStyle.like} onClick={onClickLike}><img
+                                                   src="https://vjoy.cc/wp-content/uploads/2020/05/dbe2ee2dbdeeadd89c04ba6dccad3fab.png"
+                                                   alt=""/> like:</span> {like}</div>
 
             </span>
             <div className={myStyle.r}>
