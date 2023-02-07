@@ -1,17 +1,17 @@
 import React from 'react';
-import style from './AboutUs.module.css'
+import myStyle from './AboutUs.module.css'
 
-const AboutUsInput = ({title, setTitle, addTask}) => {
+const AboutUsInput = ({title, setTitle, addTodo}) => {
     return (
-            <form onSubmit={e => {
-                e.preventDefault()
-                addTask()
-                setTitle('')
-            }}>
-                <input className={style.input} value={title} onChange={e => setTitle(e.target.value)} placeholder={'add todo...'}/>
-                <button className={style.buttonOk}>addTodo</button>
-            </form>
-
+        <form onSubmit={e => {
+            e.preventDefault()
+            if (title !== '') {
+                addTodo()
+            }
+        }}>
+            <input className={myStyle.input} value={title} onChange={e => setTitle(e.target.value)} placeholder={'title...'}/>
+            <button className={myStyle.buttonOk}>addTodo</button>
+        </form>
     );
 };
 

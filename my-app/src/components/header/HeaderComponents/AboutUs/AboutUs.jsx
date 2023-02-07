@@ -1,20 +1,22 @@
 import React, {useState} from 'react';
+import myStyle from './AboutUs.module.css'
 import {useDispatch} from "react-redux";
-import {addAboutTodo} from "../../../../Redux/Slices/aboutUsSlice";
+import {addTodo} from "../../../../Redux/Slices/aboutUsSlice";
 import AboutUsInput from "./AboutUsInput";
 import AboutUsList from "./AboutUsList";
-import style from './AboutUs.module.css'
 
 const AboutUs = () => {
-    const [title, setTitle] = useState([])
+    const [title, setTitle] = useState('')
     const dispatch = useDispatch()
 
     const addTask = () => {
-        dispatch(addAboutTodo({title}))
+        dispatch(addTodo({title}))
+        setTitle('')
     }
+
     return (
-        <div className={style.item}>
-            <AboutUsInput title={title} setTitle={setTitle} addTask={addTask}/>
+        <div className={myStyle.item}>
+            <AboutUsInput title={title} setTitle={setTitle} addTodo={addTask}/>
             <AboutUsList/>
         </div>
     );

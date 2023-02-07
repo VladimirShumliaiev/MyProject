@@ -24,7 +24,7 @@ export default configureStore({
         fourthTodo: fourthLessonsSlice,
         todos: todosSlice,
         photo: photoSlice,
-        aboutUs: aboutUsSlice,
         myPost: postSlice,
+        aboutUsSlice,
     },
 });
