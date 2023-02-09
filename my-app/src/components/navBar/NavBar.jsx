@@ -19,6 +19,9 @@ function NavBar() {
                 <div>
                     <NavLink to={'ReactTests'} className={setIsActive}> React Test</NavLink>
                 </div>
+                <div>
+                    <NavLink to={'ReactBook'} className={setIsActive}> React Book</NavLink>
+                </div>
             </h3>
         </div>
     );

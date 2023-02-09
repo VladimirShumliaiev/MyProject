@@ -10,6 +10,7 @@ import ReactLessons from "./Main/React Lessons/ReactLessons";
 import ReactNews from "./Main/React News/ReactNews";
 import ReactTest from "./Main/React Tests/ReactTest";
 import OurWebsite from "./footer/ourWebsite";
+import ReactBook from "./Main/React Book/ReactBook";
 
 const RoutingCell = () => {
     return (
@@ -25,6 +26,7 @@ const RoutingCell = () => {
                     <Route path={'ReactNews'} element={<ReactNews/>}/>
                     <Route path={'ReactTests/*'} element={<ReactTest/>}/>
                     <Route path={'oneFooter'} element={<OurWebsite/>}/>
+                    <Route path={'ReactBook/*'} element={<ReactBook/>}/>
                 </Route>
             </Routes>
 
