@@ -2,7 +2,7 @@ import React from 'react';
 import LessonsThreeItem from "./LessonsTrhee/LessonsThreeItem";
 
 const LessonsThree = () => {
-   
+
     const arr2 = [
         {
             text: 'aaaaaaa',
